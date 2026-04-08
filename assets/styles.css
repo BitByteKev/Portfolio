@@ -1,0 +1,455 @@
+/* ============================================================
+   PORTFOLIO — BASE & ANIMATION STYLES
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Original Surfer", cursive, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+p {
+  font-family: "Share Tech", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  cursor: crosshair;
+  background: #f9fafb;
+}
+
+main { flex: 1; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+nav.nav-scrolled {
+  background: rgba(251, 146, 60, 0.88) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 24px rgba(251, 146, 60, 0.35);
+}
+
+#logo {
+  font-family: "Original Surfer", cursive;
+  letter-spacing: 0.02em;
+}
+
+/* Mobile menu slide-down animation */
+@keyframes menuSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+#hero {
+  position: relative;
+  overflow: visible;
+  min-height: 380px;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+#hero-image {
+  border: 3px solid rgba(251, 146, 60, 0.6);
+  box-shadow: 0 0 40px rgba(251, 146, 60, 0.45), 0 0 80px rgba(251, 146, 60, 0.15);
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+#hero-image:hover {
+  box-shadow: 0 0 60px rgba(251, 146, 60, 0.7), 0 0 120px rgba(251, 146, 60, 0.3);
+  transform: scale(1.06) !important;
+}
+
+@keyframes floatImg {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Hero entrance animations (CSS-driven, no JS dependency) */
+@keyframes heroFadeDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroPopIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 0.9; transform: scale(1); }
+}
+
+#hero-title {
+  animation: heroFadeDown 0.7s ease 0.15s both;
+}
+#hero-subtitle {
+  animation: heroFadeDown 0.7s ease 0.35s both;
+}
+#hero-image {
+  animation: heroFadeUp 0.8s cubic-bezier(0.34,1.26,0.64,1) 0.55s both, floatImg 4s ease-in-out 1.5s infinite;
+}
+
+/* Typewriter cursor */
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: #fed7aa;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blinkCursor 0.8s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ============================================================
+   ABOUT & SECTION HEADINGS
+   ============================================================ */
+#about-me, #portfolio-description {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+#hero h1, #about, #languages, #portfolio, #contact {
+  font-family: "Original Surfer", cursive;
+}
+
+/* ============================================================
+   SKILL BARS
+   ============================================================ */
+.skill-row {
+  margin-bottom: 1.1rem;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  font-family: "Share Tech", sans-serif;
+}
+
+.skill-bar-track {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.skill-bar-fill {
+  height: 100%;
+  width: 0%;               /* animated to data-width */
+  background: linear-gradient(90deg, #f97316, #fb923c, #fed7aa);
+  border-radius: 999px;
+  position: relative;
+  box-shadow: 0 0 8px rgba(251, 146, 60, 0.5);
+}
+
+.skill-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35));
+  border-radius: 0 999px 999px 0;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 1;   }
+  100% { opacity: 0.4; }
+}
+
+/* ============================================================
+   3D TILT CARDS
+   ============================================================ */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.4s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 24px 48px rgba(0,0,0,0.22), 0 8px 16px rgba(251,146,60,0.25);
+  z-index: 10;
+}
+
+/* Card inner content */
+.card-inner {
+  transform-style: preserve-3d;
+}
+
+/* ============================================================
+   PROJECT / PORTFOLIO CARDS
+   ============================================================ */
+.project-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: box-shadow 0.4s ease;
+  position: relative;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.04);
+}
+
+.project-card-body {
+  padding: 1.2rem 1.4rem 1.4rem;
+}
+
+/* Portfolio image overlay */
+.portfolio-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.65);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: linear-gradient(135deg, rgba(251,146,60,0.75), rgba(217,70,0,0.75));
+  text-align: center;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: "Original Surfer", cursive;
+  margin-bottom: 0.5rem;
+  transform: translateY(12px);
+  transition: transform 0.4s ease 0.05s;
+}
+
+.portfolio-overlay p {
+  color: #fff2e8;
+  font-size: 0.9rem;
+  transform: translateY(12px);
+  transition: transform 0.4s ease 0.1s;
+}
+
+.portfolio-card:hover .portfolio-overlay h3,
+.portfolio-card:hover .portfolio-overlay p {
+  transform: translateY(0);
+}
+
+.visit-btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.4rem 1.1rem;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-family: "Share Tech", sans-serif;
+  transform: translateY(12px);
+  transition: transform 0.4s ease 0.15s, background 0.2s ease;
+}
+
+.portfolio-card:hover .visit-btn { transform: translateY(0); }
+.visit-btn:hover { background: rgba(255,255,255,0.35); }
+
+/* ============================================================
+   BADGE / TECH TAG
+   ============================================================ */
+.tech-tag {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-family: "Share Tech", sans-serif;
+  margin: 0.2rem 0.15rem 0;
+}
+
+/* ============================================================
+   SCROLL ANIMATION HELPERS
+   (no CSS hiding — GSAP sets initial state; elements stay
+    visible if JS fails or hasn't run yet)
+   ============================================================ */
+.anim-fade-up  {}
+.anim-scale-in {}
+
+/* ============================================================
+   SECTION ICONS (floating)
+   ============================================================ */
+.section-icon {
+  animation: floatIcon 3.5s ease-in-out infinite;
+}
+
+.section-icon:nth-child(odd) { animation-delay: 0.8s; }
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem 1rem;
+}
+
+footer img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.9);
+}
+
+footer img:hover {
+  transform: scale(1.2) rotate(-5deg);
+  filter: brightness(1.1) drop-shadow(0 0 6px rgba(255,255,255,0.6));
+}
+
+/* ============================================================
+   FORMS
+   ============================================================ */
+input, textarea {
+  box-shadow: 0.25rem 0.25rem 5px rgba(0,0,0,0.08);
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 0.75rem;
+  font-family: "Share Tech", sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0.5rem auto;
+  border-radius: 8px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #fb923c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(251,146,60,0.2);
+}
+
+/* ============================================================
+   GLOW HEADINGS
+   ============================================================ */
+.glow-text {
+  text-shadow: 0 0 24px rgba(251, 146, 60, 0.4);
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+@media (max-width: 768px) {
+  #my-portfolio { height: auto; }
+
+  .tilt-card {
+    /* disable 3D tilt on touch; keep shadow hover */
+    transform: none !important;
+  }
+
+  .portfolio-overlay {
+    opacity: 1;
+    background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 60%);
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+  }
+
+  .portfolio-overlay h3 { transform: translateY(0); font-size: 1rem; }
+  .portfolio-overlay p  { display: none; }
+  .visit-btn            { transform: translateY(0); }
+
+  @keyframes floatImg { 0%, 100% { transform: none; } }
+
+  #hero-image { animation: none; }
+}
+
+/* ============================================================
+   SCROLLBAR (optional polish)
+   ============================================================ */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #fb923c; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #ea580c; }
+
+/* ============================================================
+   SELECTION COLOR
+   ============================================================ */
+::selection { background: rgba(251,146,60,0.3); color: inherit; }
