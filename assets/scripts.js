@@ -203,16 +203,7 @@ function initScrollAnimations() {
 
   // Hero entrance is handled by CSS animations in styles.css
 
-  if (st) {
-    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
-      const target = bar.dataset.width || '0%';
-      bar.style.width = '0%';
-      gsap.to(bar, {
-        scrollTrigger: { trigger: bar, start: 'top 90%', toggleActions: 'play none none none' },
-        width: target, duration: 1.3, ease: 'power2.out',
-      });
-    });
-  }
+  // Skill bar widths are handled by IntersectionObserver in initSkillBars()
 }
 
 // ============================================
@@ -266,11 +257,9 @@ function initTypewriter() {
 }
 
 // ============================================
-// SKILL BARS (IntersectionObserver fallback)
+// SKILL BARS — IntersectionObserver (always runs)
 // ============================================
 function initSkillBars() {
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') return;
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -281,7 +270,7 @@ function initSkillBars() {
       }
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.15 });
 
   document.querySelectorAll('.skill-row').forEach(row => observer.observe(row));
 }
