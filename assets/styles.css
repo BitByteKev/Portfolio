@@ -65,7 +65,6 @@ nav.nav-scrolled {
    ============================================================ */
 #hero {
   position: relative;
-  overflow: visible;
   min-height: 380px;
 }
 
