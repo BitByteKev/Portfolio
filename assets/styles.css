@@ -49,6 +49,10 @@ nav.nav-scrolled {
   box-shadow: 0 4px 24px rgba(251, 146, 60, 0.35);
 }
 
+.nav-active {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
 #logo {
   font-family: "Original Surfer", cursive;
   letter-spacing: 0.02em;
