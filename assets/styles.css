@@ -77,7 +77,7 @@ nav.nav-scrolled {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('beach.jpeg');
+  background-image: url('tower.png');
   background-size: cover;
   background-position: center;
   transform: scaleX(-1);
