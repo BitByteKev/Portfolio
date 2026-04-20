@@ -72,6 +72,17 @@ nav.nav-scrolled {
   min-height: 520px;
 }
 
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('beach.jpeg');
+  background-size: cover;
+  background-position: center;
+  transform: scaleX(-1);
+  z-index: 0;
+}
+
 @media (max-width: 640px) {
   #hero {
     min-height: 560px;
