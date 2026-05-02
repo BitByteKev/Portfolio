@@ -28,6 +28,8 @@
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!-- Translations -->
+    <script src="assets/translations.js" defer></script>
     <!-- Custom JS -->
     <script src="assets/scripts.js" defer></script>
     <!-- Core CSS -->
@@ -42,7 +44,11 @@
         <div class="flex items-center justify-between h-16">
           <div id="logo" class="flex-shrink-0 text-white font-bold text-xl">Kevin Cromley</div>
 
-          <div class="sm:hidden">
+          <div class="sm:hidden flex items-center">
+            <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English"><span class="lang-flag">🇺🇸</span>EN</button>
+              <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español"><span class="lang-flag">🇪🇸</span>ES</button>
+            </div>
             <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -50,23 +56,27 @@
             </button>
           </div>
 
-          <div class="hidden sm:flex space-x-1" id="menu">
-            <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-            <a href="./portfolio.html"    class="nav-active text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" aria-current="page">Portfolio</a>
-            <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
-            <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Certificates</a>
-            <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
-            <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Resume</a>
+          <div class="hidden sm:flex items-center space-x-1" id="menu">
+            <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.home">Home</a>
+            <a href="./portfolio.html"    class="nav-active text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" aria-current="page" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.projects">Projects</a>
+            <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.certificates">Certificates</a>
+            <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.contact">Contact</a>
+            <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.resume">Resume</a>
+            <div class="lang-switcher" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English"><span class="lang-flag">🇺🇸</span>EN</button>
+              <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español"><span class="lang-flag">🇪🇸</span>ES</button>
+            </div>
           </div>
         </div>
 
         <div class="sm:hidden hidden flex-col space-y-1 pb-3" id="mobile-menu">
-          <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Home</a>
-          <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Portfolio</a>
-          <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Projects</a>
-          <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Certificates</a>
-          <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Contact</a>
-          <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Resume</a>
+          <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.home">Home</a>
+          <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.portfolio">Portfolio</a>
+          <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.projects">Projects</a>
+          <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.certificates">Certificates</a>
+          <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.contact">Contact</a>
+          <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.resume">Resume</a>
         </div>
       </div>
     </nav>
@@ -78,10 +88,10 @@
 
           <!-- Header -->
           <div class="text-center mb-14 anim-fade-up">
-            <h2 id="portfolio" class="text-4xl sm:text-5xl font-bold text-orange-400 glow-text mb-4">
+            <h2 id="portfolio" class="text-4xl sm:text-5xl font-bold text-orange-400 glow-text mb-4" data-i18n="portfolio.heading">
               My Portfolio
             </h2>
-            <p class="text-gray-600 max-w-xl mx-auto text-lg leading-relaxed">
+            <p class="text-gray-600 max-w-xl mx-auto text-lg leading-relaxed" data-i18n="portfolio.subheading">
               Client websites built with HTML, Tailwind CSS, JavaScript, React, and WordPress.
               Tap or hover a card to explore — click to visit.
             </p>
@@ -100,18 +110,18 @@
                   style="aspect-ratio: 16/9;"
                 />
                 <div class="portfolio-overlay">
-                  <h3>SD Hauling &amp; Demo</h3>
-                  <p>Local hauling &amp; demolition company. Built with HTML, Tailwind CSS, and JavaScript from scratch.</p>
-                  <span class="visit-btn">Visit Site ↗</span>
+                  <h3 data-i18n="portfolio.sdhd.title">SD Hauling &amp; Demo</h3>
+                  <p data-i18n="portfolio.sdhd.body">Local hauling &amp; demolition company. Built with HTML, Tailwind CSS, and JavaScript from scratch.</p>
+                  <span class="visit-btn" data-i18n="portfolio.visit">Visit Site ↗</span>
                 </div>
               </div>
               <div class="portfolio-card-body">
-                <p class="portfolio-outcome">
+                <p class="portfolio-outcome" data-i18n="portfolio.sdhd.outcome">
                   Generates 25+ calls conversions per month. Ranks on page 1 for "junk hauling San Diego."
                 </p>
                 <blockquote class="testimonial">
-                  <p>"Kevin built us a clean, fast site that brings in real leads. Our phone hasn't stopped ringing since launch."</p>
-                  <cite>— Maribell Rodriguez, SD Hauling &amp; Demo</cite>
+                  <p data-i18n="portfolio.sdhd.testimonial">"Kevin built us a clean, fast site that brings in real leads. Our phone hasn't stopped ringing since launch."</p>
+                  <cite data-i18n="portfolio.sdhd.cite">— Maribell Rodriguez, SD Hauling &amp; Demo</cite>
                 </blockquote>
               </div>
             </a>
@@ -126,18 +136,18 @@
                   style="aspect-ratio: 16/9;"
                 />
                 <div class="portfolio-overlay">
-                  <h3>JK Lingerie</h3>
-                  <p>Full e-commerce store built with React and Redux. Product catalog, cart, and checkout — fully bilingual.</p>
-                  <span class="visit-btn">Visit Site ↗</span>
+                  <h3 data-i18n="portfolio.jk.title">JK Lingerie</h3>
+                  <p data-i18n="portfolio.jk.body">Full e-commerce store built with React and Redux. Product catalog, cart, and checkout — fully bilingual.</p>
+                  <span class="visit-btn" data-i18n="portfolio.visit">Visit Site ↗</span>
                 </div>
               </div>
               <div class="portfolio-card-body">
-                <p class="portfolio-outcome">
+                <p class="portfolio-outcome" data-i18n="portfolio.jk.outcome">
                   Live bilingual store handling orders n both Mexico and USA.
                 </p>
                 <blockquote class="testimonial">
-                  <p>"The bilingual checkout was exactly what we needed. Our Spanish-speaking customers can finally shop without friction."</p>
-                  <cite>— Janny, JK Lingerie</cite>
+                  <p data-i18n="portfolio.jk.testimonial">"The bilingual checkout was exactly what we needed. Our Spanish-speaking customers can finally shop without friction."</p>
+                  <cite data-i18n="portfolio.jk.cite">— Janny, JK Lingerie</cite>
                 </blockquote>
               </div>
             </a>
@@ -152,18 +162,18 @@
                   style="aspect-ratio: 16/9;"
                 />
                 <div class="portfolio-overlay">
-                  <h3>Rolando Village BID</h3>
-                  <p>Business improvement district site for the Rolando Village neighborhood. Built with WordPress.</p>
-                  <span class="visit-btn">Visit Site ↗</span>
+                  <h3 data-i18n="portfolio.rv.title">Rolando Village BID</h3>
+                  <p data-i18n="portfolio.rv.body">Business improvement district site for the Rolando Village neighborhood. Built with WordPress.</p>
+                  <span class="visit-btn" data-i18n="portfolio.visit">Visit Site ↗</span>
                 </div>
               </div>
               <div class="portfolio-card-body">
-                <p class="portfolio-outcome">
+                <p class="portfolio-outcome" data-i18n="portfolio.rv.outcome">
                   Serves as the digital hub for 40+ local businesses in the Rolando Village neighborhood.
                 </p>
                 <blockquote class="testimonial">
-                  <p>"Kevin understood our community-first mission and delivered a site our merchants are proud to be listed on."</p>
-                  <cite>— Bob, Rolando Village BID</cite>
+                  <p data-i18n="portfolio.rv.testimonial">"Kevin understood our community-first mission and delivered a site our merchants are proud to be listed on."</p>
+                  <cite data-i18n="portfolio.rv.cite">— Bob, Rolando Village BID</cite>
                 </blockquote>
               </div>
             </a>
@@ -178,18 +188,18 @@
                   style="aspect-ratio: 16/9;"
                 />
                 <div class="portfolio-overlay">
-                  <h3>Bright &amp; Shine Cleaning</h3>
-                  <p>Cleaning services website with booking form and service area map. Built with HTML, CSS, and JavaScript.</p>
-                  <span class="visit-btn">Coming Soon ↗</span>
+                  <h3 data-i18n="portfolio.bs.title">Bright &amp; Shine Cleaning</h3>
+                  <p data-i18n="portfolio.bs.body">Cleaning services website with booking form and service area map. Built with HTML, CSS, and JavaScript.</p>
+                  <span class="visit-btn" data-i18n="portfolio.comingSoon">Coming Soon ↗</span>
                 </div>
               </div>
               <div class="portfolio-card-body">
-                <p class="portfolio-outcome">
+                <p class="portfolio-outcome" data-i18n="portfolio.bs.outcome">
                   Coming soon — booking form integration and service area mapping for 15+ San Diego ZIP codes.
                 </p>
                 <blockquote class="testimonial">
-                  <p>"Kevin's mockups already feel like a real business. We can't wait for launch."</p>
-                  <cite>— Bright &amp; Shine Cleaning</cite>
+                  <p data-i18n="portfolio.bs.testimonial">"Kevin's mockups already feel like a real business. We can't wait for launch."</p>
+                  <cite data-i18n="portfolio.bs.cite">— Bright &amp; Shine Cleaning</cite>
                 </blockquote>
               </div>
             </a>
@@ -198,7 +208,7 @@
 
           <!-- Tech tags -->
           <div class="text-center mt-10 anim-fade-up">
-            <p class="text-sm text-gray-500 mb-3 font-medium uppercase tracking-wide">Tools &amp; Technologies Used</p>
+            <p class="text-sm text-gray-500 mb-3 font-medium uppercase tracking-wide" data-i18n="portfolio.toolsLabel">Tools &amp; Technologies Used</p>
             <span class="tech-tag">React</span>
             <span class="tech-tag">Redux</span>
             <span class="tech-tag">Tailwind CSS</span>
@@ -215,7 +225,7 @@
     <!-- ── Footer ── -->
     <footer class="bg-orange-400 text-white py-6 sm:py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-sm mb-2">&copy; 2026 Kevin Cromley</p>
+        <p class="text-sm mb-2" data-i18n="footer.copyright">&copy; 2026 Kevin Cromley</p>
         <div class="flex justify-center items-center gap-4">
           <a href="https://github.com/BitByteKev" aria-label="GitHub">
             <img src="assets/github.png" alt="GitHub" width="32" height="32" />

@@ -31,6 +31,8 @@
     <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!-- Translations -->
+    <script src="assets/translations.js" defer></script>
     <!-- Custom JS -->
     <script src="assets/scripts.js" defer></script>
     <!-- Core CSS -->
@@ -44,29 +46,37 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div id="logo" class="flex-shrink-0 text-white font-bold text-xl">Kevin Cromley</div>
-          <div class="sm:hidden">
+          <div class="sm:hidden flex items-center">
+            <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English"><span class="lang-flag">🇺🇸</span>EN</button>
+              <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español"><span class="lang-flag">🇪🇸</span>ES</button>
+            </div>
             <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
             </button>
           </div>
-          <div class="hidden sm:flex space-x-1" id="menu">
-            <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-            <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Portfolio</a>
-            <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
-            <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Certificates</a>
-            <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
-            <a href="./resume.html"       class="nav-active text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" aria-current="page">Resume</a>
+          <div class="hidden sm:flex items-center space-x-1" id="menu">
+            <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.home">Home</a>
+            <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.projects">Projects</a>
+            <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.certificates">Certificates</a>
+            <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.contact">Contact</a>
+            <a href="./resume.html"       class="nav-active text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" aria-current="page" data-i18n="nav.resume">Resume</a>
+            <div class="lang-switcher" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English"><span class="lang-flag">🇺🇸</span>EN</button>
+              <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español"><span class="lang-flag">🇪🇸</span>ES</button>
+            </div>
           </div>
         </div>
         <div class="sm:hidden hidden flex-col space-y-1 pb-3" id="mobile-menu">
-          <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Home</a>
-          <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Portfolio</a>
-          <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Projects</a>
-          <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Certificates</a>
-          <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Contact</a>
-          <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Resume</a>
+          <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.home">Home</a>
+          <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.portfolio">Portfolio</a>
+          <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.projects">Projects</a>
+          <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.certificates">Certificates</a>
+          <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.contact">Contact</a>
+          <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.resume">Resume</a>
         </div>
       </div>
     </nav>
@@ -74,7 +84,7 @@
     <!-- Main Resume Section -->
     <main class="bg-gray-100 py-12">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-6 text-orange-400">Resume</h2>
+        <h2 class="text-3xl font-bold text-center mb-6 text-orange-400" data-i18n="resume.heading">Resume</h2>
         <div class="text-center mb-6">
           <a
             href="Kevin_Cromley_Resume_2026.pdf"
@@ -84,7 +94,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
             </svg>
-            Download Resume
+            <span data-i18n="resume.download">Download Resume</span>
           </a>
         </div>
         <iframe
@@ -95,8 +105,8 @@
           title="Kevin Cromley Resume"
         >
           <p class="text-center text-gray-600 py-12">
-            Your browser can't display PDFs inline.
-            <a href="Kevin_Cromley_Resume_2026.pdf" download class="text-orange-400 hover:underline font-semibold">Download the PDF here</a>.
+            <span data-i18n="resume.fallback">Your browser can't display PDFs inline.</span>
+            <a href="Kevin_Cromley_Resume_2026.pdf" download class="text-orange-400 hover:underline font-semibold" data-i18n="resume.fallbackLink">Download the PDF here</a>.
           </p>
         </iframe>
       </div>
@@ -105,7 +115,7 @@
     <!-- Footer -->
     <footer class="bg-orange-400 opacity-100 text-white py-6 sm:py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-sm">&copy; 2026 Kevin Cromley</p>
+        <p class="text-sm" data-i18n="footer.copyright">&copy; 2026 Kevin Cromley</p>
         <div class="flex justify-center items-center mt-2 gap-4">
           <a href="https://github.com/BitByteKev" aria-label="GitHub">
             <img

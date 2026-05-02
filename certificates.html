@@ -28,6 +28,8 @@
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!-- Translations -->
+    <script src="assets/translations.js" defer></script>
     <!-- Custom JS -->
     <script src="assets/scripts.js" defer></script>
     <!-- Core CSS -->
@@ -42,7 +44,11 @@
         <div class="flex items-center justify-between h-16">
           <div id="logo" class="flex-shrink-0 text-white font-bold text-xl">Kevin Cromley</div>
 
-          <div class="sm:hidden">
+          <div class="sm:hidden flex items-center">
+            <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English"><span class="lang-flag">🇺🇸</span>EN</button>
+              <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español"><span class="lang-flag">🇪🇸</span>ES</button>
+            </div>
             <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -50,23 +56,27 @@
             </button>
           </div>
 
-          <div class="hidden sm:flex space-x-1" id="menu">
-            <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-            <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Portfolio</a>
-            <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
-            <a href="./certificates.html" class="nav-active text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" aria-current="page">Certificates</a>
-            <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
-            <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Resume</a>
+          <div class="hidden sm:flex items-center space-x-1" id="menu">
+            <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.home">Home</a>
+            <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.projects">Projects</a>
+            <a href="./certificates.html" class="nav-active text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" aria-current="page" data-i18n="nav.certificates">Certificates</a>
+            <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.contact">Contact</a>
+            <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.resume">Resume</a>
+            <div class="lang-switcher" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English"><span class="lang-flag">🇺🇸</span>EN</button>
+              <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español"><span class="lang-flag">🇪🇸</span>ES</button>
+            </div>
           </div>
         </div>
 
         <div class="sm:hidden hidden flex-col space-y-1 pb-3" id="mobile-menu">
-          <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Home</a>
-          <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Portfolio</a>
-          <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Projects</a>
-          <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Certificates</a>
-          <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Contact</a>
-          <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors">Resume</a>
+          <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.home">Home</a>
+          <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.portfolio">Portfolio</a>
+          <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.projects">Projects</a>
+          <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.certificates">Certificates</a>
+          <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.contact">Contact</a>
+          <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.resume">Resume</a>
         </div>
       </div>
     </nav>
@@ -78,10 +88,10 @@
 
           <!-- Header -->
           <div class="text-center mb-14 anim-fade-up">
-            <h2 class="text-4xl sm:text-5xl font-bold text-orange-400 glow-text mb-4">
+            <h2 class="text-4xl sm:text-5xl font-bold text-orange-400 glow-text mb-4" data-i18n="certspg.heading">
               My Certificates
             </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed" data-i18n="certspg.subheading">
               Professional certifications in IT support, cybersecurity, and web development.
             </p>
           </div>
@@ -99,9 +109,9 @@
                 />
               </div>
               <div class="project-card-body">
-                <h3 class="text-xl font-bold text-orange-400 mb-1">CompTIA A+</h3>
-                <p class="text-gray-500 text-xs mb-2 uppercase tracking-wide">CompTIA</p>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                <h3 class="text-xl font-bold text-orange-400 mb-1" data-i18n="certs.aplus.title">CompTIA A+</h3>
+                <p class="text-gray-500 text-xs mb-2 uppercase tracking-wide" data-i18n="certs.aplus.issuer">CompTIA</p>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4" data-i18n="certspg.aplus.body">
                   Industry-standard certification validating foundational IT skills including hardware, networking, operating systems, security, and troubleshooting.
                 </p>
                 <div class="mb-4">
@@ -123,9 +133,9 @@
                 />
               </div>
               <div class="project-card-body">
-                <h3 class="text-xl font-bold text-orange-400 mb-1">Google Cybersecurity Certificate</h3>
-                <p class="text-gray-500 text-xs mb-2 uppercase tracking-wide">Coursera — Google</p>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                <h3 class="text-xl font-bold text-orange-400 mb-1" data-i18n="certspg.gcs.title">Google Cybersecurity Certificate</h3>
+                <p class="text-gray-500 text-xs mb-2 uppercase tracking-wide" data-i18n="certspg.gcs.issuer">Coursera — Google</p>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4" data-i18n="certspg.gcs.body">
                   Comprehensive cybersecurity program covering threat detection, network security, incident response, Python scripting, and security operations tools.
                 </p>
                 <div class="mb-4">
@@ -145,7 +155,7 @@
     <!-- ── Footer ── -->
     <footer class="bg-orange-400 text-white py-6 sm:py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-sm mb-2">&copy; 2026 Kevin Cromley</p>
+        <p class="text-sm mb-2" data-i18n="footer.copyright">&copy; 2026 Kevin Cromley</p>
         <div class="flex justify-center items-center gap-4">
           <a href="https://github.com/BitByteKev" aria-label="GitHub">
             <img src="assets/github.png" alt="GitHub" width="32" height="32" />

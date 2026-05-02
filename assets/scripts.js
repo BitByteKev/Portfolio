@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = window.innerWidth < 768;
 
+  initI18n();
   initMobileMenu();
   initHeroBackground();
   initTypewriter();
@@ -23,6 +24,85 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ============================================
+// I18N — Language Switcher (EN / ES)
+// ============================================
+const I18N_STORAGE_KEY = 'site-lang';
+
+function getLang() {
+  try {
+    const saved = localStorage.getItem(I18N_STORAGE_KEY);
+    if (saved === 'en' || saved === 'es') return saved;
+  } catch (e) {}
+  const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  return nav === 'es' ? 'es' : 'en';
+}
+
+function setLang(lang) {
+  try { localStorage.setItem(I18N_STORAGE_KEY, lang); } catch (e) {}
+  applyLang(lang);
+}
+
+function applyLang(lang) {
+  const dict = (window.I18N && window.I18N[lang]) || {};
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] != null) el.textContent = dict[key];
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
+  });
+
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria');
+    if (dict[key] != null) el.setAttribute('aria-label', dict[key]);
+  });
+
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (dict[key] != null) el.setAttribute('title', dict[key]);
+  });
+
+  // Typewriter — rebuild per-lang texts
+  const tw = document.getElementById('typewriter');
+  if (tw && tw.dataset.textsKeys) {
+    try {
+      const keys = JSON.parse(tw.dataset.textsKeys);
+      const texts = keys.map(k => dict[k]).filter(Boolean);
+      if (texts.length) {
+        tw.dataset.texts = JSON.stringify(texts);
+        if (typeof window.__restartTypewriter === 'function') window.__restartTypewriter();
+      }
+    } catch (e) {}
+  }
+
+  // Sync flag button visual state
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const isActive = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('lang-active', isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
+  });
+}
+
+function initI18n() {
+  if (!window.I18N) return;
+  const lang = getLang();
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = btn.getAttribute('data-lang');
+      if (target) setLang(target);
+    });
+  });
+
+  applyLang(lang);
+}
 
 // ============================================
 // MOBILE MENU
@@ -236,25 +316,41 @@ function initTypewriter() {
   const el = document.getElementById('typewriter');
   if (!el) return;
 
-  let texts;
-  try { texts = JSON.parse(el.dataset.texts || '[]'); } catch { texts = []; }
-  if (!texts.length) texts = [el.textContent.trim()];
-  el.textContent = '';
-
+  let texts = [];
   let ti = 0, ci = 0, deleting = false;
+  let timer = null;
+  let runId = 0;
 
-  function tick() {
-    const cur = texts[ti];
-    if (!deleting) {
-      el.textContent = cur.slice(0, ++ci);
-      if (ci === cur.length) { deleting = true; setTimeout(tick, 2200); return; }
-    } else {
-      el.textContent = cur.slice(0, --ci);
-      if (ci === 0) { deleting = false; ti = (ti + 1) % texts.length; }
-    }
-    setTimeout(tick, deleting ? 45 : 75);
+  function loadTexts() {
+    try { texts = JSON.parse(el.dataset.texts || '[]'); } catch { texts = []; }
+    if (!texts.length) texts = [el.textContent.trim()];
   }
-  setTimeout(tick, 800);
+
+  function start() {
+    if (timer) { clearTimeout(timer); timer = null; }
+    runId++;
+    const myRun = runId;
+    loadTexts();
+    el.textContent = '';
+    ti = 0; ci = 0; deleting = false;
+
+    function tick() {
+      if (myRun !== runId) return;
+      const cur = texts[ti] || '';
+      if (!deleting) {
+        el.textContent = cur.slice(0, ++ci);
+        if (ci === cur.length) { deleting = true; timer = setTimeout(tick, 2200); return; }
+      } else {
+        el.textContent = cur.slice(0, --ci);
+        if (ci === 0) { deleting = false; ti = (ti + 1) % texts.length; }
+      }
+      timer = setTimeout(tick, deleting ? 45 : 75);
+    }
+    timer = setTimeout(tick, 800);
+  }
+
+  window.__restartTypewriter = start;
+  start();
 }
 
 // ============================================
