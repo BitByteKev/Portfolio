@@ -542,3 +542,55 @@ input:focus, textarea:focus {
    SELECTION COLOR
    ============================================================ */
 ::selection { background: rgba(251,146,60,0.3); color: inherit; }
+
+/* ============================================================
+   FLOATING WHATSAPP BUTTON (draggable)
+   ============================================================ */
+#whatsapp-fab {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  background-color: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0,0,0,0.15);
+  cursor: grab;
+  z-index: 9999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+#whatsapp-fab:hover { transform: scale(1.08); box-shadow: 0 10px 24px rgba(37, 211, 102, 0.55), 0 4px 10px rgba(0,0,0,0.2); }
+#whatsapp-fab:active { cursor: grabbing; }
+#whatsapp-fab.is-dragging { transition: none; cursor: grabbing; transform: scale(1.05); }
+#whatsapp-fab svg { width: 32px; height: 32px; pointer-events: none; }
+#whatsapp-fab::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 2px solid rgba(37, 211, 102, 0.4);
+  opacity: 0;
+  animation: wa-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes wa-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+@media (max-width: 640px) {
+  #whatsapp-fab { width: 54px; height: 54px; left: 14px; bottom: 14px; }
+  #whatsapp-fab svg { width: 28px; height: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #whatsapp-fab::after { animation: none; }
+  #whatsapp-fab { transition: none; }
+}
