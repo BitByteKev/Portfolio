@@ -368,6 +368,54 @@ h1 {
 .portfolio-card:hover .visit-btn { transform: translateY(0); }
 .visit-btn:hover { background: rgba(255,255,255,0.35); }
 
+/* Portfolio card body — outcome + testimonial */
+.portfolio-card { background: #fff; }
+
+.portfolio-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-card-body {
+  padding: 1.1rem 1.4rem 1.3rem;
+  border-top: 1px solid #fed7aa;
+  background: #fff;
+}
+
+.portfolio-outcome {
+  font-family: "Share Tech", sans-serif;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.testimonial {
+  margin-top: 0.9rem;
+  padding: 0.8rem 1rem;
+  background: #fff7ed;
+  border-left: 3px solid #fb923c;
+  border-radius: 6px;
+}
+
+.testimonial p {
+  font-family: "Share Tech", sans-serif;
+  font-style: italic;
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+.testimonial cite {
+  font-family: "Share Tech", sans-serif;
+  font-style: normal;
+  color: #ea580c;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.testimonial-empty { display: none; }
+
 /* ============================================================
    BADGE / TECH TAG
    ============================================================ */
