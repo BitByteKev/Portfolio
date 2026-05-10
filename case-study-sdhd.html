@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Case study: how Kevin Cromley rebuilt SD Hauling & Demo's website and local SEO to drive page-1 rankings and inbound calls in San Diego." />
+    <meta name="keywords" content="SD Hauling case study, San Diego junk removal SEO, web design case study, Kevin Cromley, local SEO San Diego" />
+    <meta name="author" content="Kevin Cromley" />
+    <title>SD Hauling & Demo — Case Study | Kevin Cromley</title>
+    <link rel="canonical" href="https://kcdigital.pro/case-study-sdhd.html" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="SD Hauling & Demo — Case Study" />
+    <meta property="og:description" content="How a rebuild + local SEO turned a family-owned junk removal company into a page-1 search result in San Diego." />
+    <meta property="og:url" content="https://kcdigital.pro/case-study-sdhd.html" />
+    <meta property="og:image" content="https://kcdigital.pro/assets/SDHD.png" />
+    <meta property="og:site_name" content="Kevin Cromley Portfolio" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SD Hauling & Demo — Case Study" />
+    <meta name="twitter:description" content="How a rebuild + local SEO turned a family-owned junk removal company into a page-1 search result in San Diego." />
+    <meta name="twitter:image" content="https://kcdigital.pro/assets/SDHD.png" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js"></script>
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!-- Translations -->
+    <script src="assets/translations.js" defer></script>
+    <!-- Custom JS -->
+    <script src="assets/scripts.js" defer></script>
+    <!-- Core CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/styles.css" />
+  </head>
+
+  <body>
+
+    <!-- ── Navbar ── -->
+    <nav class="bg-orange-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div id="logo" class="flex-shrink-0 text-white font-bold text-xl">Kevin Cromley</div>
+
+          <div class="sm:hidden flex items-center">
+            <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English"><span class="lang-flag">🇺🇸</span>EN</button>
+              <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español"><span class="lang-flag">🇳🇮</span>ES</button>
+            </div>
+            <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="hidden sm:flex items-center space-x-1" id="menu">
+            <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.home">Home</a>
+            <a href="./portfolio.html"    class="nav-active text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" aria-current="page" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.projects">Projects</a>
+            <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.certificates">Certificates</a>
+            <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.contact">Contact</a>
+            <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.resume">Resume</a>
+            <div class="lang-switcher" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English"><span class="lang-flag">🇺🇸</span>EN</button>
+              <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español"><span class="lang-flag">🇳🇮</span>ES</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sm:hidden hidden flex-col space-y-1 pb-3" id="mobile-menu">
+          <a href="./index.html"        class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.home">Home</a>
+          <a href="./portfolio.html"    class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.portfolio">Portfolio</a>
+          <a href="./projects.html"     class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.projects">Projects</a>
+          <a href="./certificates.html" class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.certificates">Certificates</a>
+          <a href="./contact.html"      class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.contact">Contact</a>
+          <a href="./resume.html"       class="text-white hover:bg-orange-500 px-3 py-2 rounded-md text-sm font-medium block transition-colors" data-i18n="nav.resume">Resume</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ── Case Study ── -->
+    <main>
+      <article class="bg-gray-50 py-16 sm:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <!-- Breadcrumb -->
+          <nav class="mb-6 text-sm" aria-label="Breadcrumb">
+            <a href="./portfolio.html" class="text-orange-500 hover:text-orange-600 font-medium">← Back to Portfolio</a>
+          </nav>
+
+          <!-- Header -->
+          <header class="mb-12 anim-fade-up">
+            <p class="text-sm uppercase tracking-wide text-gray-500 font-semibold mb-3">Case Study</p>
+            <h1 class="text-4xl sm:text-5xl font-bold text-orange-400 glow-text mb-4">
+              SD Hauling &amp; Demo
+            </h1>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              The digital transformation of a family-owned junk removal and demolition
+              company in San Diego County.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-6">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Local SEO</span>
+              <span class="tech-tag">Responsive Design</span>
+            </div>
+
+            <a href="https://sdhaulinganddemo.com" target="_blank" rel="noopener"
+               class="inline-block mt-6 bg-orange-400 hover:bg-orange-500 text-white font-semibold px-5 py-2.5 rounded-md transition-colors">
+              Visit Live Site ↗
+            </a>
+          </header>
+
+          <!-- Hero image -->
+          <figure class="mb-14 anim-fade-up">
+            <img src="assets/SDHD.png" alt="SD Hauling and Demo website screenshot"
+                 class="w-full rounded-lg shadow-lg object-cover" style="aspect-ratio: 16/9;" />
+            <figcaption class="text-center text-sm text-gray-500 mt-3">
+              The rebuilt SD Hauling &amp; Demo homepage — mobile-first, fast, and built to convert.
+            </figcaption>
+          </figure>
+
+          <!-- Overview -->
+          <section class="mb-12 anim-fade-up">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Overview</h2>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              This case study documents the digital transformation of a family-owned junk
+              removal and demolition company in San Diego County — taking an outdated
+              website with poor local visibility and turning it into a lead-generating
+              asset that ranks on page 1 of Google.
+            </p>
+          </section>
+
+          <!-- Challenge -->
+          <section class="mb-12 anim-fade-up">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">The Challenge</h2>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+              The business had quality operations but faced a critical marketing problem.
+              The website appeared outdated and failed to generate local search visibility.
+            </p>
+            <blockquote class="border-l-4 border-orange-400 pl-5 py-2 italic text-gray-700 text-lg bg-white rounded-r-md shadow-sm">
+              "When someone needs a hot tub hauled off or a garage cleared out, they Google it —
+              and if you're not on the first page, you don't exist."
+            </blockquote>
+          </section>
+
+          <!-- Solution -->
+          <section class="mb-12 anim-fade-up">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Solution Implemented</h2>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+              The rebuild focused on three core areas:
+            </p>
+
+            <div class="grid sm:grid-cols-1 gap-6">
+
+              <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-orange-400">
+                <div class="flex items-center mb-3">
+                  <span class="bg-orange-400 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
+                  <h3 class="text-xl font-bold text-gray-800">Professional Presentation</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed">
+                  A modern, mobile-optimized site designed to build homeowner trust and
+                  facilitate easy contact — clear pricing cues, prominent phone numbers,
+                  and friction-free quote requests.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-orange-400">
+                <div class="flex items-center mb-3">
+                  <span class="bg-orange-400 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">2</span>
+                  <h3 class="text-xl font-bold text-gray-800">Local SEO Strategy</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed">
+                  Structured content addressing specific services — junk removal, demolition,
+                  hot tub removal, and hoarding cleanouts — across relevant neighborhood
+                  areas. Genuinely useful pages were prioritized over keyword stuffing.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-orange-400">
+                <div class="flex items-center mb-3">
+                  <span class="bg-orange-400 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">3</span>
+                  <h3 class="text-xl font-bold text-gray-800">Content Development</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed">
+                  Before-and-after documentation, job walkthroughs, and video content
+                  captured on Ray-Ban Meta glasses during actual jobs — used to build
+                  site authority and reinforce real-world expertise.
+                </p>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Results -->
+          <section class="mb-12 anim-fade-up">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Key Results</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <p class="text-4xl font-bold text-orange-400 mb-2">Page 1</p>
+                <p class="text-sm text-gray-600">Google ranking for "junk removal San Diego"</p>
+              </div>
+              <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <p class="text-4xl font-bold text-orange-400 mb-2">25+</p>
+                <p class="text-sm text-gray-600">Call conversions generated per month</p>
+              </div>
+              <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <p class="text-4xl font-bold text-orange-400 mb-2">↑ CTR</p>
+                <p class="text-sm text-gray-600">Improved click-through rates in Search Console</p>
+              </div>
+            </div>
+
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+              Google Search Console tracking showed improved search click-through rates
+              for relevant queries, with booking increases following search visibility
+              improvements.
+            </p>
+
+            <blockquote class="border-l-4 border-orange-400 pl-5 py-2 italic text-gray-700 text-lg bg-white rounded-r-md shadow-sm">
+              "Once you're in front of the right searches, the business does the rest."
+            </blockquote>
+          </section>
+
+          <!-- Testimonial -->
+          <section class="mb-12 anim-fade-up">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Client Testimonial</h2>
+            <blockquote class="testimonial bg-white rounded-lg shadow-md p-6">
+              <p class="text-lg italic text-gray-700 mb-3">
+                "Kevin built us a clean, fast site that brings in real leads. Our phone
+                hasn't stopped ringing since launch."
+              </p>
+              <cite class="text-gray-600 not-italic font-medium">— Maribell R., SD Hauling &amp; Demo</cite>
+            </blockquote>
+          </section>
+
+          <!-- CTA -->
+          <section class="bg-orange-400 rounded-lg p-8 sm:p-10 text-center text-white anim-fade-up">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-3">Need results like these?</h2>
+            <p class="text-lg mb-6 text-orange-50">
+              Bilingual web design and local SEO for San Diego businesses.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+              <a href="./contact.html"
+                 class="bg-white text-orange-500 hover:bg-orange-50 font-semibold px-6 py-3 rounded-md transition-colors">
+                Get in Touch
+              </a>
+              <a href="./portfolio.html"
+                 class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition-colors border border-white">
+                View More Work
+              </a>
+            </div>
+            <p class="text-sm text-orange-50 mt-6">
+              Kevin Cromley · San Diego, CA · 619.944.8759 · Bilingual (English/Spanish)
+            </p>
+          </section>
+
+        </div>
+      </article>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="bg-orange-400 text-white py-6 sm:py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm mb-2" data-i18n="footer.copyright">&copy; 2026 Kevin Cromley</p>
+        <div class="flex justify-center items-center gap-4">
+          <a href="https://github.com/BitByteKev" aria-label="GitHub">
+            <img src="assets/github.png" alt="GitHub" width="32" height="32" />
+          </a>
+          <span class="text-orange-200">|</span>
+          <a href="https://www.linkedin.com/in/kevin-cromley-ii-6541a0319" aria-label="LinkedIn">
+            <img src="assets/linkedin.png" alt="LinkedIn" width="32" height="32" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
