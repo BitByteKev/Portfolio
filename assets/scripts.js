@@ -282,6 +282,30 @@ function initScrollAnimations() {
     });
   });
 
+  // Recompute trigger positions after layout-shifting resources settle
+  // (Tailwind CDN, images without intrinsic dimensions, web fonts).
+  // Without this, late layout shifts can leave triggers pointing at stale
+  // positions and sections stuck at opacity:0.
+  if (st) {
+    const refresh = () => st.refresh();
+    window.addEventListener('load', refresh);
+    document.querySelectorAll('img').forEach(img => {
+      if (!img.complete) img.addEventListener('load', refresh, { once: true });
+    });
+  }
+
+  // Failsafe: if anything is still hidden 3.5s in, force it visible.
+  setTimeout(() => {
+    document.querySelectorAll('.anim-fade-up, .anim-scale-in, .anim-stagger').forEach(el => {
+      const targets = el.classList.contains('anim-stagger') ? Array.from(el.children) : [el];
+      targets.forEach(t => {
+        if (parseFloat(getComputedStyle(t).opacity) < 0.05) {
+          gsap.set(t, { clearProps: 'all', opacity: 1, y: 0, scale: 1 });
+        }
+      });
+    });
+  }, 3500);
+
   // Hero entrance is handled by CSS animations in styles.css
 
   // Skill bar widths are handled by IntersectionObserver in initSkillBars()
