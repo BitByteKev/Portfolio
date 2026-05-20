@@ -110,15 +110,28 @@ nav.nav-scrolled {
   line-height: 1;
 }
 
-/* Mobile: show switcher inline next to hamburger */
+/* Mobile: shown inside the hamburger menu (see .mobile-menu-actions) */
 .lang-switcher-mobile {
   display: inline-flex;
-  margin-right: 6px;
 }
 
 @media (min-width: 640px) {
   .lang-switcher-mobile { display: none; }
 }
+
+/* ── Mobile menu actions row (lang + theme toggle inside hamburger menu) ── */
+.mobile-menu-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.mobile-menu-actions .lang-switcher,
+.mobile-menu-actions .theme-toggle { margin-left: 0; }
 
 /* ============================================================
    HERO SECTION
