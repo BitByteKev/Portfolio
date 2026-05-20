@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.innerWidth < 768;
 
   initI18n();
+  initDarkMode();
   initMobileMenu();
   initHeroBackground();
   initTypewriter();
@@ -102,6 +103,88 @@ function initI18n() {
   });
 
   applyLang(lang);
+}
+
+// ============================================
+// DARK MODE — toggle + persistence + time-of-day default
+// Light 6am–6pm local, dark 6pm–6am, unless the user has
+// picked an explicit mode (which is then persisted).
+// ============================================
+const THEME_STORAGE_KEY = 'site-theme';
+const DAY_START_HOUR = 6;   // inclusive — light starts at 06:00
+const DAY_END_HOUR   = 18;  // exclusive — dark starts at 18:00
+
+function getStoredTheme() {
+  try { return localStorage.getItem(THEME_STORAGE_KEY); } catch (e) { return null; }
+}
+
+function themeForNow() {
+  const h = new Date().getHours();
+  return (h >= DAY_START_HOUR && h < DAY_END_HOUR) ? 'light' : 'dark';
+}
+
+function applyTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.classList.toggle('dark', isDark);
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.setAttribute('aria-pressed', String(isDark));
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  });
+}
+
+function setTheme(theme) {
+  try { localStorage.setItem(THEME_STORAGE_KEY, theme); } catch (e) {}
+  applyTheme(theme);
+}
+
+function buildToggleButton(extraClass) {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'theme-toggle' + (extraClass ? ' ' + extraClass : '');
+  btn.innerHTML = `
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>`;
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+    setTheme(next);
+  });
+  return btn;
+}
+
+function initDarkMode() {
+  // Inject one toggle button next to each lang-switcher (desktop + mobile).
+  document.querySelectorAll('.lang-switcher').forEach(ls => {
+    if (ls.parentElement && ls.parentElement.querySelector('.theme-toggle')) return;
+    const mobile = ls.classList.contains('lang-switcher-mobile');
+    const btn = buildToggleButton(mobile ? 'theme-toggle-mobile' : '');
+    if (mobile) {
+      ls.parentElement.insertBefore(btn, ls); // place before lang switcher on mobile row
+    } else {
+      ls.parentElement.appendChild(btn); // append after lang switcher on desktop row
+    }
+  });
+
+  // Resolve initial theme: explicit user choice wins, else fall back to
+  // local time of day. The inline pre-paint script already used the same
+  // logic to avoid a flash.
+  const stored = getStoredTheme();
+  const initial = (stored === 'dark' || stored === 'light') ? stored : themeForNow();
+  applyTheme(initial);
+
+  // Re-check on a low-frequency interval so an open tab flips itself at
+  // dusk / dawn — unless the user has overridden the choice.
+  setInterval(() => {
+    if (getStoredTheme()) return; // user override in effect
+    const wantDark = themeForNow() === 'dark';
+    const isDark = document.documentElement.classList.contains('dark');
+    if (wantDark !== isDark) applyTheme(wantDark ? 'dark' : 'light');
+  }, 60 * 1000);
 }
 
 // ============================================
