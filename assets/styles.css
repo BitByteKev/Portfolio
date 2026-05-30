@@ -486,6 +486,43 @@ h1 {
 .testimonial-empty { display: none; }
 
 /* ============================================================
+   HOVER ZOOM — floating enlarged image preview (desktop)
+   ============================================================ */
+.hover-zoom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  width: 460px;
+  max-width: 60vw;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35), 0 6px 18px rgba(251,146,60,0.25);
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.hover-zoom.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hover-zoom img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-zoom { transition: none; transform: none; }
+  .hover-zoom.is-visible { transform: none; }
+}
+
+/* ============================================================
    BADGE / TECH TAG
    ============================================================ */
 .tech-tag {

@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
       el.style.transform = 'none';
     });
   }
+
+  if (!isMobile) initHoverZoom();
 });
 
 // ============================================
@@ -412,6 +414,62 @@ function initCardTilt() {
     card.addEventListener('mouseleave', () => {
       card.style.transition = 'transform 0.55s cubic-bezier(0.23,1,0.32,1)';
       card.style.transform  = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+    });
+  });
+}
+
+// ============================================
+// HOVER ZOOM — floating enlarged image preview (desktop)
+// ============================================
+function initHoverZoom() {
+  const images = document.querySelectorAll('.project-card img, .portfolio-card img');
+  if (!images.length) return;
+
+  // One shared preview element reused by every card.
+  const preview = document.createElement('div');
+  preview.className = 'hover-zoom';
+  const previewImg = document.createElement('img');
+  preview.appendChild(previewImg);
+  document.body.appendChild(preview);
+
+  const OFFSET = 24; // gap between cursor and preview
+
+  function position(e) {
+    const pw = preview.offsetWidth;
+    const ph = preview.offsetHeight;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    // Default: to the right and below the cursor; flip near edges.
+    let x = e.clientX + OFFSET;
+    let y = e.clientY + OFFSET;
+    if (x + pw > vw - 8) x = e.clientX - OFFSET - pw;
+    if (y + ph > vh - 8) y = vh - 8 - ph;
+    if (x < 8) x = 8;
+    if (y < 8) y = 8;
+
+    preview.style.left = x + 'px';
+    preview.style.top  = y + 'px';
+  }
+
+  images.forEach(img => {
+    // Bind to the image's wrapper, not the <img> — on portfolio cards a hover
+    // overlay sits on top of the image and would otherwise intercept the mouse.
+    const target = img.parentElement || img;
+
+    target.addEventListener('mouseenter', e => {
+      const src = img.currentSrc || img.src;
+      if (!src) return;
+      previewImg.src = src;
+      previewImg.alt = img.alt || '';
+      position(e);
+      preview.classList.add('is-visible');
+    });
+
+    target.addEventListener('mousemove', position);
+
+    target.addEventListener('mouseleave', () => {
+      preview.classList.remove('is-visible');
     });
   });
 }
