@@ -438,11 +438,23 @@ h1 {
 .visit-btn:hover { background: rgba(255,255,255,0.35); }
 
 /* Portfolio card body — outcome + testimonial */
-.portfolio-card { background: #fff; }
+.tilt-card.portfolio-card {
+  background: #fff;
+  display: flex; /* double class beats Tailwind's .block utility */
+  flex-direction: column;
+}
 
 .portfolio-media {
   position: relative;
   overflow: hidden;
+  /* Grow to absorb extra height on grid-stretched cards with
+     shorter bodies (e.g. no testimonial) — no white gap */
+  flex: 1 1 auto;
+}
+
+.portfolio-media img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .portfolio-card-body {
