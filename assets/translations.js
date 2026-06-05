@@ -94,7 +94,7 @@ window.I18N = {
     "certs.js.issuer": "Certified",
 
     // Footer
-    "footer.copyright": "© 2026 Kevin Cromley",
+    "footer.copyright": "2026 Kevin Cromley",
 
     // Portfolio page
     "portfolio.heading": "My Portfolio",
@@ -327,7 +327,7 @@ window.I18N = {
     "certs.js.issuer": "Certificado",
 
     // Footer
-    "footer.copyright": "© 2026 Kevin Cromley",
+    "footer.copyright": "2026 Kevin Cromley",
 
     // Portfolio page
     "portfolio.heading": "Mi Portafolio",
