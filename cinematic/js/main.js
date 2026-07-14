@@ -89,6 +89,45 @@
     }
   }
 
+  /* ── WhatsApp button: draggable, click opens chat ── */
+  (function () {
+    var fab = document.getElementById("waFab");
+    if (!fab) return;
+    var startX = 0, startY = 0, baseX = 0, baseY = 0, dx = 0, dy = 0;
+    var dragging = false, moved = false;
+
+    function clamp() {
+      var r = fab.getBoundingClientRect();
+      if (r.left < 8) dx += 8 - r.left;
+      if (r.top < 8) dy += 8 - r.top;
+      if (r.right > innerWidth - 8) dx -= r.right - (innerWidth - 8);
+      if (r.bottom > innerHeight - 8) dy -= r.bottom - (innerHeight - 8);
+      fab.style.transform = "translate(" + dx + "px," + dy + "px)";
+    }
+
+    fab.addEventListener("pointerdown", function (e) {
+      dragging = true; moved = false;
+      startX = e.clientX; startY = e.clientY;
+      baseX = dx; baseY = dy;
+      fab.setPointerCapture(e.pointerId);
+    });
+    fab.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var mx = e.clientX - startX, my = e.clientY - startY;
+      if (Math.abs(mx) > 6 || Math.abs(my) > 6) moved = true;
+      dx = baseX + mx; dy = baseY + my;
+      clamp();
+    });
+    fab.addEventListener("pointerup", function (e) {
+      dragging = false;
+      fab.releasePointerCapture(e.pointerId);
+    });
+    fab.addEventListener("click", function (e) {
+      if (moved) { e.preventDefault(); moved = false; }
+    });
+    window.addEventListener("resize", clamp);
+  })();
+
   /* ── Reduced motion: static page, no scrub ── */
   if (reduceMotion) {
     preloadFrames(function () {
@@ -120,6 +159,11 @@
 
   /* ── Lenis smooth scroll + GSAP ── */
   gsap.registerPlugin(ScrollTrigger);
+
+  // Mobile: don't re-layout pins when the address bar shows/hides,
+  // and normalize touch scroll so pinned sections don't jitter on iOS.
+  ScrollTrigger.config({ ignoreMobileResize: true });
+  if (ScrollTrigger.isTouch === 1) ScrollTrigger.normalizeScroll(true);
 
   var lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
   lenis.on("scroll", ScrollTrigger.update);
@@ -170,8 +214,9 @@
     duration: 0.14
   }, 0.1);
 
-  // tracking: letters land wide, then settle tight
-  gsap.set(".hero-name .name-line", { letterSpacing: "0.22em" });
+  // tracking: letters land wide, then settle tight (narrower start on phones)
+  var wideTracking = window.innerWidth < 600 ? "0.08em" : "0.22em";
+  gsap.set(".hero-name .name-line", { letterSpacing: wideTracking });
   heroTl.to(".hero-name .name-line", {
     letterSpacing: "0em",
     ease: "power2.inOut",
