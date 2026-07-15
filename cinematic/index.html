@@ -11,13 +11,75 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/cinematic.css?v=5" />
+  <link rel="canonical" href="https://kcdigital.pro/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://kcdigital.pro/#kevin",
+        "name": "Kevin Cromley",
+        "url": "https://kcdigital.pro/",
+        "image": "https://kcdigital.pro/assets/kevin.jpeg",
+        "jobTitle": "Web Developer & IT Technician",
+        "description": "Web developer and IT technician in San Diego. Builds fast, bilingual, mobile-first websites, runs SEO campaigns, and provides IT services for local businesses. CompTIA A+ certified.",
+        "email": "mailto:cromleyk@icloud.com",
+        "telephone": "+1-619-944-8759",
+        "knowsLanguage": ["en", "es"],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "CompTIA A+",
+            "credentialCategory": "certification",
+            "recognizedBy": { "@type": "Organization", "name": "CompTIA" }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Google Cybersecurity Professional Certificate",
+            "credentialCategory": "certification",
+            "recognizedBy": { "@type": "Organization", "name": "Google / Coursera" }
+          }
+        ],
+        "sameAs": [
+          "https://github.com/BitByteKev",
+          "https://www.linkedin.com/in/kevin-cromley-ii-6541a0319"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://kcdigital.pro/#kcdigital",
+        "name": "KC Digital",
+        "url": "https://kcdigital.pro/",
+        "founder": { "@id": "https://kcdigital.pro/#kevin" },
+        "telephone": "+1-619-944-8759",
+        "email": "mailto:cromleyk@icloud.com",
+        "areaServed": {
+          "@type": "City",
+          "name": "San Diego",
+          "containedInPlace": { "@type": "State", "name": "California" }
+        },
+        "knowsLanguage": ["en", "es"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Optimization" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT Services for Local Business" } }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Loader -->
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader-inner">
-      <span class="loader-label mono">LOADING ORBIT</span>
+      <span class="loader-label mono">LOADING SITE</span>
       <span class="loader-pct mono" id="loaderPct">0%</span>
       <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
     </div>
