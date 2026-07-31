@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kevin Cromley — Design &amp; Marketing for Businesses</title>
-  <meta name="description" content="Kevin Cromley designs websites and marketing solutions for businesses. Web development, SEO optimization, and IT services in San Diego." />
+  <meta name="description" content="Kevin Cromley designs and builds websites and marketing that bring businesses more customers. Web development, SEO, and IT services in San Diego." />
   <link rel="canonical" href="https://kcdigital.pro/" />
   <link rel="icon" href="/images/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/cinematic/css/cinematic.css?v=5" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -20,30 +20,16 @@
         "@id": "https://kcdigital.pro/#kevin",
         "name": "Kevin Cromley",
         "url": "https://kcdigital.pro/",
-        "image": "https://kcdigital.pro/assets/kevin.jpeg",
         "jobTitle": "Web Developer & IT Technician",
         "description": "Web developer and IT technician in San Diego. Builds fast, bilingual, mobile-first websites, runs SEO campaigns, and provides IT services for local businesses. CompTIA A+ certified.",
         "email": "mailto:cromleyk@icloud.com",
         "telephone": "+1-619-944-8759",
         "knowsLanguage": ["en", "es"],
         "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "CompTIA A+",
-            "credentialCategory": "certification",
-            "recognizedBy": { "@type": "Organization", "name": "CompTIA" }
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "Google Cybersecurity Professional Certificate",
-            "credentialCategory": "certification",
-            "recognizedBy": { "@type": "Organization", "name": "Google / Coursera" }
-          }
+          { "@type": "EducationalOccupationalCredential", "name": "CompTIA A+", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "CompTIA" } },
+          { "@type": "EducationalOccupationalCredential", "name": "Google Cybersecurity Professional Certificate", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Google / Coursera" } }
         ],
-        "sameAs": [
-          "https://github.com/BitByteKev",
-          "https://www.linkedin.com/in/kevin-cromley-ii-6541a0319"
-        ]
+        "sameAs": [ "https://github.com/BitByteKev", "https://www.linkedin.com/in/kevin-cromley-ii-6541a0319" ]
       },
       {
         "@type": "ProfessionalService",
@@ -53,40 +39,208 @@
         "founder": { "@id": "https://kcdigital.pro/#kevin" },
         "telephone": "+1-619-944-8759",
         "email": "mailto:cromleyk@icloud.com",
-        "areaServed": {
-          "@type": "City",
-          "name": "San Diego",
-          "containedInPlace": { "@type": "State", "name": "California" }
-        },
+        "areaServed": { "@type": "City", "name": "San Diego", "containedInPlace": { "@type": "State", "name": "California" } },
         "knowsLanguage": ["en", "es"],
         "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Services",
+          "@type": "OfferCatalog", "name": "Services",
           "itemListElement": [
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Optimization" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT Services for Local Business" } }
           ]
         }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://kcdigital.pro/#website",
-        "url": "https://kcdigital.pro/",
-        "name": "Kevin Cromley — Design & Marketing for Businesses",
-        "publisher": { "@id": "https://kcdigital.pro/#kevin" },
-        "inLanguage": "en"
       }
     ]
   }
   </script>
+
+  <style>
+  /* ═══════════════════════════════════════════════════
+     KEVIN CROMLEY — PORTFOLIO 2026 · work-led rebuild
+     ink black · emerald · cream
+     ═══════════════════════════════════════════════════ */
+  :root{
+    --ink:#050807; --coal:#0b100e; --panel:#0e1512;
+    --emerald:#12e087; --emerald-deep:#0c6b44;
+    --cream:#f2eddf; --cream-60:rgba(242,237,223,.6); --cream-30:rgba(242,237,223,.3);
+    --line:rgba(242,237,223,.12); --line-em:rgba(18,224,135,.16);
+    --display:"Anton","Arial Narrow",sans-serif;
+    --body:"Archivo","Helvetica Neue",sans-serif;
+    --mono:"IBM Plex Mono","SF Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{background:var(--ink);scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  .mono{font-family:var(--mono)}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  ::selection{background:var(--emerald);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--emerald);outline-offset:3px}
+
+  /* ── Loader ── */
+  .loader{position:fixed;inset:0;z-index:90;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s}
+  .loader.done{opacity:0;visibility:hidden;pointer-events:none}
+  .loader-inner{width:min(320px,70vw)}
+  .loader-label,.loader-pct{font-size:11px;letter-spacing:.25em;color:var(--cream-60)}
+  .loader-pct{float:right;color:var(--emerald)}
+  .loader-bar{margin-top:12px;height:1px;background:rgba(242,237,223,.15)}
+  .loader-fill{height:100%;width:0%;background:var(--emerald);transition:width .2s ease}
+
+  /* ── Header ── */
+  .site-head{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px clamp(20px,4vw,56px);mix-blend-mode:difference}
+  .head-mark{font-size:13px;letter-spacing:.2em;color:var(--cream)}
+  .head-nav{display:flex;gap:clamp(16px,3vw,40px)}
+  .head-nav a{font-size:11px;letter-spacing:.22em;color:var(--cream);position:relative;padding-bottom:2px}
+  .head-nav a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--cream);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.65,0,.35,1)}
+  .head-nav a:hover::after{transform:scaleX(1);transform-origin:left}
+
+  /* ── Hero (typographic, work ribbon) ── */
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(120px,20vh,200px) clamp(20px,4vw,56px) 0;overflow:hidden}
+  .hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 15% 30%,rgba(18,224,135,.12),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 10%,rgba(18,224,135,.06),transparent 60%)}
+  .hero-inner{position:relative;max-width:1400px;margin:0 auto;width:100%;flex:1;display:flex;flex-direction:column;justify-content:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.32em;color:var(--emerald);margin-bottom:clamp(14px,3vh,26px)}
+  .hero-name{font-family:var(--display);font-weight:400;line-height:.86;font-size:clamp(58px,13vw,200px);text-transform:uppercase}
+  .name-line{display:block;overflow:hidden}
+  .name-line span{display:inline-block;transform:translateY(105%);transition:transform .9s cubic-bezier(.16,1,.3,1)}
+  .name-line.accent span{color:var(--emerald)}
+  .ready .name-line span{transform:translateY(0)}
+  .ready .name-line.accent span{transition-delay:.08s}
+  .hero-sub{margin-top:clamp(20px,4vh,36px);font-size:clamp(15px,1.7vw,21px);color:var(--cream-60);max-width:30em}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(26px,4vh,40px)}
+  .scroll-cue{position:absolute;bottom:150px;right:clamp(20px,4vw,56px);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;color:var(--cream-30)}
+  .cue-line{width:1px;height:44px;background:linear-gradient(to bottom,var(--emerald),transparent);animation:cueDrop 2s cubic-bezier(.65,0,.35,1) infinite}
+  @keyframes cueDrop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* work ribbon marquee at base of hero */
+  .ribbon{position:relative;margin-top:clamp(40px,7vh,80px);border-top:1px solid var(--line-em);border-bottom:1px solid var(--line-em);padding:22px 0;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+  .ribbon-track{display:flex;gap:20px;width:max-content;animation:slide 42s linear infinite}
+  .hero:hover .ribbon-track{animation-play-state:paused}
+  .ribbon-item{position:relative;width:clamp(220px,26vw,340px);aspect-ratio:16/10;overflow:hidden;border:1px solid var(--line);flex:0 0 auto;background:var(--coal)}
+  .ribbon-item img{width:100%;height:100%;object-fit:cover;opacity:.62;filter:saturate(.85);transition:opacity .4s,filter .4s,transform .6s cubic-bezier(.22,1,.36,1)}
+  .ribbon-item:hover img{opacity:1;filter:none;transform:scale(1.04)}
+  .ribbon-item span{position:absolute;left:12px;bottom:10px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--cream);text-shadow:0 1px 6px rgba(0,0,0,.8)}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ── Buttons ── */
+  .btn{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:16px 34px;border:1px solid var(--emerald);display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1),background .35s,color .35s,box-shadow .35s}
+  .btn-solid{background:var(--emerald);color:var(--ink)}
+  .btn-solid:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(18,224,135,.35)}
+  .btn-ghost{color:var(--cream);border-color:rgba(242,237,223,.3)}
+  .btn-ghost:hover{transform:translateY(-4px);border-color:var(--emerald);color:var(--emerald)}
+
+  /* ── Stats ── */
+  .stats{position:relative;z-index:2;background:var(--ink);border-top:1px solid var(--line-em);border-bottom:1px solid var(--line-em);padding:clamp(48px,9vh,96px) clamp(20px,4vw,56px)}
+  .stats-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,4vw,64px)}
+  .stat-num{font-family:var(--display);font-size:clamp(52px,7vw,110px);line-height:1;color:var(--cream);display:block}
+  .stat:nth-child(4) .stat-num{color:var(--emerald)}
+  .stat-label{display:block;margin-top:10px;font-size:10px;letter-spacing:.26em;color:var(--cream-60)}
+
+  /* ── Section head ── */
+  .section-eyebrow{font-size:11px;letter-spacing:.32em;color:var(--emerald)}
+  .wrap{max-width:1400px;margin:0 auto;padding:clamp(80px,13vh,150px) clamp(20px,4vw,56px)}
+
+  /* ── Selected work (the centerpiece) ── */
+  .work-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:clamp(40px,7vh,72px)}
+  .work-heading{font-family:var(--display);font-weight:400;font-size:clamp(48px,8vw,128px);line-height:.9;text-transform:uppercase;margin-top:14px}
+  .work-heading .accent{color:var(--emerald)}
+  .work-lead{max-width:26em;color:var(--cream-60);font-size:clamp(14px,1.4vw,17px)}
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.4vw,32px)}
+  .pcard{position:relative;display:block;background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .5s}
+  .pcard:hover{transform:translateY(-8px);border-color:rgba(18,224,135,.45)}
+  .pcard-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--coal)}
+  .pcard-media img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.9;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .5s}
+  .pcard:hover .pcard-media img{transform:scale(1.05);opacity:1}
+  .pcard-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,7,.55),transparent 55%)}
+  .pcard-body{padding:clamp(22px,2.4vw,34px)}
+  .pcard-idx{font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--emerald)}
+  .pcard-title{font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,46px);text-transform:uppercase;line-height:1;margin:12px 0 12px}
+  .pcard-pitch{color:var(--cream-60);font-size:15px;max-width:32em}
+  .pcard-url{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--cream-60);transition:color .3s}
+  .pcard-arrow{display:inline-block;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .pcard:hover .pcard-url{color:var(--emerald)}
+  .pcard:hover .pcard-arrow{transform:translateX(6px)}
+  .pcard.wide{grid-column:1 / -1}
+  .pcard.wide{display:grid;grid-template-columns:1.2fr 1fr}
+  .pcard.wide .pcard-media{aspect-ratio:auto;height:100%;min-height:280px}
+  .pcard.wide .pcard-body{display:flex;flex-direction:column;justify-content:center}
+
+  /* index rows for remaining work */
+  .work-index{margin-top:clamp(40px,7vh,72px)}
+  .index-label{font-family:var(--mono);font-size:11px;letter-spacing:.32em;color:var(--cream-30);margin-bottom:18px}
+  .index-row{display:grid;grid-template-columns:64px 1.1fr 1.6fr auto;align-items:baseline;gap:clamp(12px,2vw,32px);padding:22px 10px;border-top:1px solid var(--line);transition:background .35s,padding-left .45s cubic-bezier(.22,1,.36,1)}
+  .index-row:last-child{border-bottom:1px solid var(--line)}
+  .row-idx{font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--emerald)}
+  .row-title{font-family:var(--display);font-weight:400;font-size:clamp(20px,2.2vw,34px);text-transform:uppercase;line-height:1;color:var(--cream);transition:color .3s}
+  .row-note{font-size:14px;color:var(--cream-60)}
+  .row-url{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--cream-30);justify-self:end;transition:color .3s}
+  .index-row:hover{background:rgba(18,224,135,.06);padding-left:22px}
+  .index-row:hover .row-title,.index-row:hover .row-url{color:var(--emerald)}
+  .index-row:hover .pcard-arrow{transform:translateX(6px)}
+
+  /* ── Services / pillars (static, no video) ── */
+  .services{background:var(--coal);border-top:1px solid var(--line-em)}
+  .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,40px);margin-top:clamp(36px,6vh,64px)}
+  .pillar{border-top:2px solid var(--emerald);padding-top:24px}
+  .pillar-idx{font-family:var(--mono);font-size:13px;letter-spacing:.3em;color:var(--emerald);display:block;margin-bottom:16px}
+  .pillar-title{font-family:var(--display);font-weight:400;font-size:clamp(30px,3.4vw,52px);line-height:.95;text-transform:uppercase;color:var(--cream)}
+  .pillar-body{margin-top:16px;color:var(--cream-60);font-size:15px}
+
+  /* ── Credentials ── */
+  .creds{background:var(--ink);border-top:1px solid var(--line-em)}
+  .creds-grid{margin-top:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,48px)}
+  .cred{border-left:1px solid rgba(18,224,135,.3);padding-left:clamp(16px,1.8vw,28px)}
+  .cred-idx{font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--emerald)}
+  .cred-title{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,38px);text-transform:uppercase;line-height:1.02;margin:10px 0 8px;color:var(--cream)}
+  .cred-issuer{font-family:var(--mono);font-size:10px;letter-spacing:.26em;color:var(--cream-60)}
+  .cred-img{margin-top:18px;border:1px solid var(--line);overflow:hidden}
+  .cred-img img{width:100%;height:auto;opacity:.82;filter:saturate(.85);transition:opacity .4s,filter .4s,transform .6s cubic-bezier(.22,1,.36,1)}
+  .cred:hover .cred-img img{opacity:1;filter:none;transform:scale(1.02)}
+
+  /* ── Finale ── */
+  .finale{position:relative;min-height:90vh;min-height:90svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(90px,14vh,160px) clamp(20px,4vw,56px) 0;background:radial-gradient(ellipse 70% 50% at 50% 110%,rgba(18,224,135,.12),transparent 70%),var(--ink)}
+  .finale-name{font-family:var(--display);font-weight:400;line-height:.88;font-size:clamp(58px,13.5vw,210px);text-transform:uppercase;display:flex;flex-direction:column;align-items:center}
+  .finale-name .accent{color:var(--emerald)}
+  .finale .section-eyebrow{margin-bottom:clamp(16px,3vh,30px)}
+  .finale-actions{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:clamp(36px,6vh,64px)}
+  .site-foot{width:100%;max-width:1400px;margin-top:auto;padding:clamp(48px,9vh,90px) 0 30px;display:flex;gap:clamp(18px,3vw,44px);justify-content:center;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--cream-30)}
+  .site-foot a{color:var(--cream-60);transition:color .3s}
+  .site-foot a:hover{color:var(--emerald)}
+
+  /* ── reveal on scroll ── */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ── WhatsApp ── */
+  .wa-fab{position:fixed;right:26px;bottom:26px;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;z-index:85;box-shadow:0 10px 30px rgba(37,211,102,.35);transition:box-shadow .3s,transform .3s}
+  .wa-fab:hover{box-shadow:0 14px 40px rgba(37,211,102,.55);transform:translateY(-3px)}
+  .wa-fab svg{width:30px;height:30px;fill:var(--ink)}
+
+  /* ── grain ── */
+  .grain{position:fixed;inset:-50%;z-index:80;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;animation:grainShift .9s steps(4) infinite}
+  @keyframes grainShift{0%{transform:translate(0,0)}25%{transform:translate(-2%,3%)}50%{transform:translate(3%,-2%)}75%{transform:translate(-3%,-3%)}100%{transform:translate(2%,2%)}}
+
+  /* ── responsive ── */
+  @media(max-width:900px){
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .work-grid{grid-template-columns:1fr}
+    .pcard.wide{grid-template-columns:1fr}
+    .pcard.wide .pcard-media{min-height:200px}
+    .pillars-grid{grid-template-columns:1fr}
+    .index-row{grid-template-columns:46px 1fr auto}
+    .row-note{display:none}
+    .creds-grid{grid-template-columns:1fr}
+    .scroll-cue{display:none}
+  }
+  @media(max-width:560px){.head-nav a:not(:last-child){display:none}}
+  @media(prefers-reduced-motion:reduce){.grain,.cue-line,.ribbon-track{animation:none}.name-line span{transform:none}.reveal{opacity:1;transform:none}}
+  </style>
 </head>
 <body>
 
   <!-- Loader -->
   <div class="loader" id="loader" aria-hidden="true">
     <div class="loader-inner">
-      <span class="loader-label mono">LOADING SITE</span>
+      <span class="loader-label mono">LOADING</span>
       <span class="loader-pct mono" id="loaderPct">0%</span>
       <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
     </div>
@@ -96,166 +250,182 @@
   <header class="site-head">
     <a class="head-mark mono" href="#top">KC—26</a>
     <nav class="head-nav mono">
-      <a href="#pillars">Services</a>
       <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#credentials">Certs</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="top">
 
-    <!-- ══ HERO · ORBIT SCRUB ══ -->
+    <!-- ══ HERO ══ -->
     <section class="hero" id="hero">
-      <div class="hero-stage">
-        <canvas id="orbitCanvas" aria-label="Cinematic orbit of Kevin Cromley"></canvas>
-        <div class="hero-vignette" aria-hidden="true"></div>
-
-        <div class="hero-type">
-          <p class="hero-eyebrow mono">SAN DIEGO, CA — PORTFOLIO 2026</p>
-          <h1 class="hero-name" aria-label="Kevin Cromley">
-            <span class="name-line" data-word="KEVIN"></span>
-            <span class="name-line accent-line" data-word="CROMLEY"></span>
-          </h1>
-          <p class="hero-sub">Design websites and marketing solutions for businesses.</p>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-eyebrow mono">SAN DIEGO, CA — PORTFOLIO 2026</p>
+        <h1 class="hero-name">
+          <span class="name-line"><span>KEVIN</span></span>
+          <span class="name-line accent"><span>CROMLEY</span></span>
+        </h1>
+        <p class="hero-sub">I design and build websites and marketing that bring businesses more customers — fast, bilingual, and built to convert.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#work">View the work</a>
+          <a class="btn btn-ghost" href="#contact">Start a project</a>
         </div>
+      </div>
 
-        <div class="scroll-cue mono" aria-hidden="true">
-          <span>SCROLL</span>
-          <span class="cue-line"></span>
+      <div class="scroll-cue mono" aria-hidden="true"><span>SCROLL</span><span class="cue-line"></span></div>
+
+      <!-- work ribbon: the projects ARE the hero visual -->
+      <div class="ribbon" aria-hidden="true">
+        <div class="ribbon-track">
+          <a class="ribbon-item" href="#work"><img src="assets/jk.png" alt="" /><span>JK LINGERIE</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/SDHD.png" alt="" /><span>SD HAULING &amp; DEMO</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/wagyu.png" alt="" /><span>MEAT CONNECTION</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/Omni.png" alt="" /><span>OMNI — LIVE MAP</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/rolando.png" alt="" /><span>ROLANDO VILLAGE BID</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/shine.jpg" alt="" /><span>BRIGHT &amp; SHINE</span></a>
+          <!-- duplicate for seamless loop -->
+          <a class="ribbon-item" href="#work"><img src="assets/jk.png" alt="" /><span>JK LINGERIE</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/SDHD.png" alt="" /><span>SD HAULING &amp; DEMO</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/wagyu.png" alt="" /><span>MEAT CONNECTION</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/Omni.png" alt="" /><span>OMNI — LIVE MAP</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/rolando.png" alt="" /><span>ROLANDO VILLAGE BID</span></a>
+          <a class="ribbon-item" href="#work"><img src="assets/shine.jpg" alt="" /><span>BRIGHT &amp; SHINE</span></a>
         </div>
       </div>
     </section>
 
-    <!-- ══ STATS STRIP ══ -->
+    <!-- ══ STATS ══ -->
     <section class="stats" id="stats">
       <div class="stats-grid">
-        <div class="stat">
-          <span class="stat-num" data-count="7" data-pad="2">00</span>
-          <span class="stat-label mono">PROJECTS SHIPPED</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-count="2" data-pad="2">00</span>
-          <span class="stat-label mono">CERTIFICATIONS</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-count="2" data-pad="2">00</span>
-          <span class="stat-label mono">LANGUAGES — EN / ES</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-count="100" data-suffix="%">0</span>
-          <span class="stat-label mono">MOBILE-FIRST BUILDS</span>
-        </div>
+        <div class="stat reveal"><span class="stat-num" data-count="7" data-pad="2">00</span><span class="stat-label mono">PROJECTS SHIPPED</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="2" data-pad="2">00</span><span class="stat-label mono">CERTIFICATIONS</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="2" data-pad="2">00</span><span class="stat-label mono">LANGUAGES — EN / ES</span></div>
+        <div class="stat reveal"><span class="stat-num" data-count="100" data-suffix="%">0</span><span class="stat-label mono">MOBILE-FIRST BUILDS</span></div>
       </div>
     </section>
 
-    <!-- ══ THREE PILLARS · over THE BUILDER ══ -->
-    <section class="pillars" id="pillars">
-      <div class="pillars-stage">
-        <video class="bg-video" id="builderVideo" muted loop playsinline preload="auto"
-               src="/cinematic/video/builder.mp4"></video>
-        <div class="stage-shade" aria-hidden="true"></div>
+    <!-- ══ SELECTED WORK ══ -->
+    <section class="wrap" id="work">
+      <div class="work-head">
+        <div>
+          <p class="section-eyebrow mono">SELECTED WORK</p>
+          <h2 class="work-heading">Built to<br /><span class="accent">perform.</span></h2>
+        </div>
+        <p class="work-lead">Real sites for real businesses — storefronts, lead machines, and live tools. Every one shipped, fast, and mobile-first.</p>
+      </div>
 
+      <div class="work-grid">
+        <a class="pcard wide reveal" href="https://www.jklingerie.com" target="_blank" rel="noopener">
+          <div class="pcard-media"><img src="assets/jk.png" alt="JK Lingerie e-commerce storefront designed by Kevin Cromley" loading="lazy" /></div>
+          <div class="pcard-body">
+            <span class="pcard-idx">W·1 — E-COMMERCE</span>
+            <h3 class="pcard-title">JK Lingerie</h3>
+            <p class="pcard-pitch">An e-commerce storefront built to turn browsers into buyers — clean product merchandising and a checkout that gets out of the way.</p>
+            <span class="pcard-url mono">jklingerie.com <span class="pcard-arrow">→</span></span>
+          </div>
+        </a>
+
+        <a class="pcard reveal" href="https://www.sdhaulinganddemo.com" target="_blank" rel="noopener">
+          <div class="pcard-media"><img src="assets/SDHD.png" alt="SD Hauling and Demo bilingual lead-generation website" loading="lazy" /></div>
+          <div class="pcard-body">
+            <span class="pcard-idx">W·2 — LEAD GEN</span>
+            <h3 class="pcard-title">SD Hauling &amp; Demo</h3>
+            <p class="pcard-pitch">A bilingual lead machine for San Diego's hauling and demolition crews.</p>
+            <span class="pcard-url mono">sdhaulinganddemo.com <span class="pcard-arrow">→</span></span>
+          </div>
+        </a>
+
+        <a class="pcard reveal" href="https://meat-connection.vercel.app" target="_blank" rel="noopener">
+          <div class="pcard-media"><img src="assets/wagyu.png" alt="Meat Connection butcher shop e-commerce site" loading="lazy" /></div>
+          <div class="pcard-body">
+            <span class="pcard-idx">W·3 — E-COMMERCE</span>
+            <h3 class="pcard-title">Meat Connection</h3>
+            <p class="pcard-pitch">Premium cuts, direct to your door — a butcher shop taken digital.</p>
+            <span class="pcard-url mono">meat-connection.vercel.app <span class="pcard-arrow">→</span></span>
+          </div>
+        </a>
+
+        <a class="pcard reveal" href="https://www.omniscients.net" target="_blank" rel="noopener">
+          <div class="pcard-media"><img src="assets/Omni.png" alt="Omni live map of highway cameras, checkpoints and flights" loading="lazy" /></div>
+          <div class="pcard-body">
+            <span class="pcard-idx">W·4 — LIVE TOOL</span>
+            <h3 class="pcard-title">Omni — Live Map</h3>
+            <p class="pcard-pitch">A real-time map of highway cameras, checkpoints, and live flights.</p>
+            <span class="pcard-url mono">omniscients.net <span class="pcard-arrow">→</span></span>
+          </div>
+        </a>
+
+        <a class="pcard reveal" href="https://rolandovillagebid.com" target="_blank" rel="noopener">
+          <div class="pcard-media"><img src="assets/rolando.png" alt="Rolando Village Business Improvement District website" loading="lazy" /></div>
+          <div class="pcard-body">
+            <span class="pcard-idx">W·5 — COMMUNITY</span>
+            <h3 class="pcard-title">Rolando Village BID</h3>
+            <p class="pcard-pitch">A business-improvement-district site for the Rolando Village neighborhood.</p>
+            <span class="pcard-url mono">rolandovillagebid.com <span class="pcard-arrow">→</span></span>
+          </div>
+        </a>
+      </div>
+
+      <div class="work-index">
+        <p class="index-label">MORE WORK</p>
+        <a class="index-row reveal" href="portfolio.html">
+          <span class="row-idx">W·6</span>
+          <span class="row-title">Bright &amp; Shine Cleaning</span>
+          <span class="row-note">Cleaning-services site with booking form and service-area map.</span>
+          <span class="row-url">view case <span class="pcard-arrow">→</span></span>
+        </a>
+        <a class="index-row reveal" href="projects.html">
+          <span class="row-idx">W·7</span>
+          <span class="row-title">Home Lab / IT Stack</span>
+          <span class="row-note">Self-hosted network stack — Portainer, Pi-hole, dashboards and monitoring.</span>
+          <span class="row-url">view projects <span class="pcard-arrow">→</span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ══ SERVICES ══ -->
+    <section class="services" id="services">
+      <div class="wrap">
         <p class="section-eyebrow mono">WHAT I DO — THREE PILLARS</p>
-
-        <div class="pillar" data-pillar="0">
-          <span class="pillar-idx mono">01</span>
-          <h2 class="pillar-title">Website<br />&amp; Development</h2>
-          <p class="pillar-body">Fast, bilingual, mobile-first websites built to bring in calls — from storefronts to service sites.</p>
-        </div>
-        <div class="pillar" data-pillar="1">
-          <span class="pillar-idx mono">02</span>
-          <h2 class="pillar-title">SEO<br />Optimization</h2>
-          <p class="pillar-body">Local search, Google Business Profile, and campaigns that put businesses in front of the people already looking.</p>
-        </div>
-        <div class="pillar" data-pillar="2">
-          <span class="pillar-idx mono">03</span>
-          <h2 class="pillar-title">IT Services<br />for Local Business</h2>
-          <p class="pillar-body">Network setup, Windows &amp; Linux servers, workstation deployment, and ongoing support. CompTIA A+ certified.</p>
-        </div>
-
-        <div class="pillar-progress mono" aria-hidden="true">
-          <span class="pp-step" data-step="0">01</span>
-          <span class="pp-step" data-step="1">02</span>
-          <span class="pp-step" data-step="2">03</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ WORK · over THE CLOSER ══ -->
-    <section class="work" id="work">
-      <video class="bg-video work-video" id="closerVideo" muted loop playsinline preload="auto"
-             src="/cinematic/video/closer.mp4"></video>
-      <div class="stage-shade work-shade" aria-hidden="true"></div>
-
-      <div class="work-inner">
-        <p class="section-eyebrow mono">SELECTED WORK</p>
-        <h2 class="work-heading">Built to<br /><span class="accent">perform.</span></h2>
-
-        <div class="work-cards">
-          <a class="card" href="https://www.jklingerie.com" target="_blank" rel="noopener">
-            <span class="card-idx mono">W·1</span>
-            <h3 class="card-title">JK Lingerie</h3>
-            <p class="card-pitch">An e-commerce storefront built to turn browsers into buyers.</p>
-            <span class="card-url mono">jklingerie.com<span class="card-arrow">→</span></span>
-          </a>
-          <a class="card" href="https://www.sdhaulinganddemo.com" target="_blank" rel="noopener">
-            <span class="card-idx mono">W·2</span>
-            <h3 class="card-title">SD Hauling &amp; Demo</h3>
-            <p class="card-pitch">A bilingual lead machine for San Diego's hauling and demolition crews.</p>
-            <span class="card-url mono">sdhaulinganddemo.com<span class="card-arrow">→</span></span>
-          </a>
-          <a class="card" href="https://meat-connection.vercel.app" target="_blank" rel="noopener">
-            <span class="card-idx mono">W·3</span>
-            <h3 class="card-title">Meat Connection</h3>
-            <p class="card-pitch">Premium cuts, direct to your door — a butcher shop taken digital.</p>
-            <span class="card-url mono">meat-connection.vercel.app<span class="card-arrow">→</span></span>
-          </a>
-        </div>
-
-        <div class="work-index">
-          <p class="index-label mono">FULL INDEX</p>
-          <a class="index-row" href="https://www.omniscients.net" target="_blank" rel="noopener">
-            <span class="row-idx mono">W·4</span>
-            <span class="row-title">Omni — Live Map</span>
-            <span class="row-note">Real-time map of highway cameras, checkpoints, and live flights.</span>
-            <span class="row-url mono">omniscients.net<span class="card-arrow">→</span></span>
-          </a>
-          <a class="index-row" href="https://rolandovillagebid.com" target="_blank" rel="noopener">
-            <span class="row-idx mono">W·5</span>
-            <span class="row-title">Rolando Village BID</span>
-            <span class="row-note">Business improvement district site for the Rolando Village neighborhood.</span>
-            <span class="row-url mono">rolandovillagebid.com<span class="card-arrow">→</span></span>
-          </a>
-          <a class="index-row" href="/portfolio.html" target="_blank" rel="noopener">
-            <span class="row-idx mono">W·6</span>
-            <span class="row-title">Bright &amp; Shine Cleaning</span>
-            <span class="row-note">Cleaning services site with booking form and service-area map.</span>
-            <span class="row-url mono">view portfolio<span class="card-arrow">→</span></span>
-          </a>
+        <div class="pillars-grid">
+          <div class="pillar reveal">
+            <span class="pillar-idx">01</span>
+            <h3 class="pillar-title">Websites &amp;<br />Development</h3>
+            <p class="pillar-body">Fast, bilingual, mobile-first websites built to bring in calls — from storefronts to service sites.</p>
+          </div>
+          <div class="pillar reveal">
+            <span class="pillar-idx">02</span>
+            <h3 class="pillar-title">SEO<br />Optimization</h3>
+            <p class="pillar-body">Local search, Google Business Profile, and campaigns that put businesses in front of the people already looking.</p>
+          </div>
+          <div class="pillar reveal">
+            <span class="pillar-idx">03</span>
+            <h3 class="pillar-title">IT Services for<br />Local Business</h3>
+            <p class="pillar-body">Network setup, Windows &amp; Linux servers, workstation deployment, and ongoing support. CompTIA A+ certified.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ══ CREDENTIALS ══ -->
     <section class="creds" id="credentials">
-      <div class="creds-inner">
+      <div class="wrap">
         <p class="section-eyebrow mono">CERTIFICATIONS</p>
         <div class="creds-grid">
-          <div class="cred">
-            <span class="cred-idx mono">C·1</span>
+          <div class="cred reveal">
+            <span class="cred-idx">C·1</span>
             <h3 class="cred-title">CompTIA A+</h3>
-            <span class="cred-issuer mono">COMPTIA — 2026</span>
-            <figure class="cred-img">
-              <img src="/cinematic/certs/comptia.jpg" alt="CompTIA A+ certificate awarded to Kevin Cromley II" loading="lazy" />
-            </figure>
+            <span class="cred-issuer">COMPTIA — 2026</span>
+            <figure class="cred-img"><img src="cinematic/certs/comptia.jpg" alt="CompTIA A+ certificate awarded to Kevin Cromley II" loading="lazy" /></figure>
           </div>
-          <div class="cred">
-            <span class="cred-idx mono">C·2</span>
+          <div class="cred reveal">
+            <span class="cred-idx">C·2</span>
             <h3 class="cred-title">Google Cybersecurity</h3>
-            <span class="cred-issuer mono">COURSERA — GOOGLE — 2024</span>
-            <figure class="cred-img">
-              <img src="/cinematic/certs/google-cybersecurity.jpg" alt="Google Cybersecurity Professional Certificate awarded to Kevin Cromley" loading="lazy" />
-            </figure>
+            <span class="cred-issuer">COURSERA — GOOGLE — 2024</span>
+            <figure class="cred-img"><img src="cinematic/certs/google-cybersecurity.jpg" alt="Google Cybersecurity Professional Certificate awarded to Kevin Cromley" loading="lazy" /></figure>
           </div>
         </div>
       </div>
@@ -265,41 +435,52 @@
     <section class="finale" id="contact">
       <p class="section-eyebrow mono">THE NEXT PROJECT COULD BE YOURS</p>
       <h2 class="finale-name">
-        <span class="name-line" data-word="CONTACT"></span>
-        <span class="name-line accent-line" data-word="KEVIN"></span>
+        <span>CONTACT</span>
+        <span class="accent">KEVIN</span>
       </h2>
       <div class="finale-actions">
         <a class="btn btn-solid" href="mailto:cromleyk@icloud.com">Email Kevin</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/kevin-cromley-ii-6541a0319" target="_blank" rel="noopener">Connect on LinkedIn</a>
       </div>
-
-      <footer class="site-foot mono">
+      <footer class="site-foot">
         <a href="https://github.com/BitByteKev" target="_blank" rel="noopener">GITHUB</a>
         <a href="https://www.linkedin.com/in/kevin-cromley-ii-6541a0319" target="_blank" rel="noopener">LINKEDIN</a>
-        <a href="/portfolio.html">PORTFOLIO</a>
-        <a href="/classic.html">CLASSIC SITE</a>
-        <span class="foot-copy">© 2026 KEVIN CROMLEY</span>
+        <a href="portfolio.html">PORTFOLIO</a>
+        <a href="classic.html">CLASSIC SITE</a>
+        <span>© 2026 KEVIN CROMLEY</span>
       </footer>
     </section>
 
   </main>
 
-  <!-- WhatsApp — draggable -->
-  <a class="wa-fab" id="waFab" href="https://wa.me/16199448759" target="_blank" rel="noopener" aria-label="Text Kevin on WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+  <!-- WhatsApp -->
+  <a class="wa-fab" href="https://wa.me/16199448759" target="_blank" rel="noopener" aria-label="Text Kevin on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
-  <!-- Film grain -->
   <div class="grain" aria-hidden="true"></div>
 
   <script>
-    window.__ORBIT__ = { count: 193, path: '/cinematic/frames/orbit_', ext: '.jpg', pad: 4 };
+  (function(){
+    // Loader
+    var loader=document.getElementById('loader'), fill=document.getElementById('loaderFill'), pct=document.getElementById('loaderPct');
+    var p=0; var t=setInterval(function(){ p=Math.min(100,p+Math.random()*26); fill.style.width=p+'%'; pct.textContent=Math.round(p)+'%'; if(p>=100){clearInterval(t); setTimeout(done,250);} },110);
+    function done(){ loader.classList.add('done'); document.body.classList.add('ready'); }
+    window.addEventListener('load', function(){ p=100; });
+
+    // Reveal on scroll
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+    // Stat count-up
+    function countUp(el){
+      var target=+el.dataset.count, pad=+(el.dataset.pad||0), suf=el.dataset.suffix||'', dur=1400, start=null;
+      function step(ts){ if(!start)start=ts; var k=Math.min(1,(ts-start)/dur); var v=Math.round(target*(1-Math.pow(1-k,3)));
+        var s=String(v); if(pad)while(s.length<pad)s='0'+s; el.textContent=s+suf; if(k<1)requestAnimationFrame(step);} requestAnimationFrame(step);
+    }
+    var so=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); so.unobserve(e.target);} }); },{threshold:.6});
+    document.querySelectorAll('.stat-num').forEach(function(el){ so.observe(el); });
+  })();
   </script>
-  <script src="/cinematic/js/lenis.min.js"></script>
-  <script src="/cinematic/js/gsap.min.js"></script>
-  <script src="/cinematic/js/ScrollTrigger.min.js"></script>
-  <script src="/cinematic/js/main.js?v=5"></script>
 </body>
 </html>

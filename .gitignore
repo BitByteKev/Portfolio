@@ -1,0 +1,7 @@
+# local scratch / staged-for-deletion
+_to_delete/
+.claude/
+
+# macOS
+.DS_Store
+**/.DS_Store
