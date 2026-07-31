@@ -100,7 +100,6 @@ window.I18N = {
     "portfolio.heading": "My Portfolio",
     "portfolio.subheading": "Client websites built with HTML, Tailwind CSS, JavaScript, React, and WordPress. Tap or hover a card to explore — click to visit.",
     "portfolio.visit": "Visit Site ↗",
-    "portfolio.comingSoon": "Coming Soon ↗",
     "portfolio.omni.title": "Omni — Live Map",
     "portfolio.omni.body": "Real-time interactive map overlaying California highway cameras, CBP checkpoints, and live flight tracking. Built with React and MapLibre GL.",
     "portfolio.omni.outcome": "A personal full-stack project — aggregates live public data (Caltrans CCTV, CBP checkpoints, and flights) into one fast, mobile-friendly map with heatmaps, clustering, and geolocation.",
@@ -122,11 +121,6 @@ window.I18N = {
     "portfolio.rv.outcome": "Serves as the digital hub for 40+ local businesses in the Rolando Village neighborhood.",
     "portfolio.rv.testimonial": "\"Kevin understood our community-first mission and delivered a site our merchants are proud to be listed on.\"",
     "portfolio.rv.cite": "— Bob, Rolando Village BID",
-    "portfolio.bs.title": "Bright & Shine Cleaning",
-    "portfolio.bs.body": "Cleaning services website with booking form and service area map. Built with HTML, CSS, and JavaScript.",
-    "portfolio.bs.outcome": "Coming soon — booking form integration and service area mapping for 15+ San Diego ZIP codes.",
-    "portfolio.bs.testimonial": "\"Kevin's mockups already feel like a real business. We can't wait for launch.\"",
-    "portfolio.bs.cite": "— Bright & Shine Cleaning",
     "portfolio.toolsLabel": "Tools & Technologies Used",
 
     // Projects page
@@ -334,7 +328,6 @@ window.I18N = {
     "portfolio.heading": "Mi Portafolio",
     "portfolio.subheading": "Sitios web de clientes construidos con HTML, Tailwind CSS, JavaScript, React y WordPress. Toca o pasa el cursor sobre una tarjeta para explorar — haz clic para visitar.",
     "portfolio.visit": "Visitar Sitio ↗",
-    "portfolio.comingSoon": "Próximamente ↗",
     "portfolio.omni.title": "Omni — Mapa en Vivo",
     "portfolio.omni.body": "Mapa interactivo en tiempo real que muestra cámaras de carreteras de California, puntos de control de CBP y rastreo de vuelos en vivo. Construido con React y MapLibre GL.",
     "portfolio.omni.outcome": "Un proyecto full-stack personal — reúne datos públicos en vivo (cámaras CCTV de Caltrans, puntos de control de CBP y vuelos) en un solo mapa rápido y optimizado para móviles, con mapas de calor, agrupación y geolocalización.",
@@ -356,11 +349,6 @@ window.I18N = {
     "portfolio.rv.outcome": "Sirve como el centro digital para más de 40 negocios locales en el barrio de Rolando Village.",
     "portfolio.rv.testimonial": "\"Kevin entendió nuestra misión centrada en la comunidad y entregó un sitio del que nuestros comerciantes están orgullosos de aparecer.\"",
     "portfolio.rv.cite": "— Bob, Rolando Village BID",
-    "portfolio.bs.title": "Bright & Shine Cleaning",
-    "portfolio.bs.body": "Sitio web de servicios de limpieza con formulario de reserva y mapa de áreas de servicio. Construido con HTML, CSS y JavaScript.",
-    "portfolio.bs.outcome": "Próximamente — integración de formulario de reserva y mapeo de áreas de servicio para más de 15 códigos postales de San Diego.",
-    "portfolio.bs.testimonial": "\"Los mockups de Kevin ya se sienten como un negocio real. No podemos esperar al lanzamiento.\"",
-    "portfolio.bs.cite": "— Bright & Shine Cleaning",
     "portfolio.toolsLabel": "Herramientas y Tecnologías Usadas",
 
     // Projects page
