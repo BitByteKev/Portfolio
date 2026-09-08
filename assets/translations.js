@@ -458,3 +458,10 @@ window.I18N = {
     "lang.label": "Idioma",
   },
 };
+
+// Project enquiry copy shared by the contact form.
+Object.assign(window.I18N.en, {"contact.projectType": "Project type", "contact.choose": "Choose a service", "contact.website": "Website design or development", "contact.marketing": "SEO or local marketing", "contact.it": "IT services", "contact.other": "Something else", "contact.timeline": "Ideal timeline", "contact.chooseTimeline": "Choose a timeline", "contact.month": "Within a month", "contact.quarter": "Within 1–3 months", "contact.flexible": "Flexible / exploring options", "contact.heading": "Start a project", "contact.subheading": "Tell me what you’re working on. Let’s find the right next step.", "contact.message": "Brief project description", "contact.messagePh": "What does your business need, and what would a successful project look like?"});
+Object.assign(window.I18N.es, {"contact.projectType": "Tipo de proyecto", "contact.choose": "Elige un servicio", "contact.website": "Diseño o desarrollo web", "contact.marketing": "SEO o marketing local", "contact.it": "Servicios de TI", "contact.other": "Otro", "contact.timeline": "Plazo ideal", "contact.chooseTimeline": "Elige un plazo", "contact.month": "Dentro de un mes", "contact.quarter": "Dentro de 1–3 meses", "contact.flexible": "Flexible / explorando opciones", "contact.heading": "Inicia un proyecto", "contact.subheading": "Cuéntame en qué estás trabajando. Encontremos el siguiente paso.", "contact.message": "Descripción breve del proyecto", "contact.messagePh": "¿Qué necesita tu negocio y cómo sería un proyecto exitoso?"});
+
+Object.assign(window.I18N.en, {"portfolio.subheading": "Client websites built with HTML, Tailwind CSS, JavaScript, React, and WordPress. Explore the projects and the SD Hauling & Demo case study."});
+Object.assign(window.I18N.es, {"portfolio.subheading": "Sitios para clientes creados con HTML, Tailwind CSS, JavaScript, React y WordPress. Explora los proyectos y el caso de estudio de SD Hauling & Demo."});

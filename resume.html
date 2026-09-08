@@ -6,9 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <script>
-      (function(){try{var t=localStorage.getItem('site-theme');var d;if(t==='dark'||t==='light'){d=t==='dark';}else{var h=new Date().getHours();d=(h<6||h>=18);}if(d)document.documentElement.classList.add('dark');}catch(e){}})();
-    </script>
+
     <meta name="description" content="Resume of Kevin Cromley — IT Technician and Web Developer with experience in HTML, CSS, JavaScript, networking, and Linux." />
     <meta name="keywords" content="Kevin Cromley resume, IT technician resume, web developer resume, CompTIA A+" />
     <meta name="author" content="Kevin Cromley" />
@@ -30,10 +28,10 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Three.js -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js"></script>
+
     <!-- GSAP -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+
     <!-- Translations -->
     <script src="assets/translations.js" defer></script>
     <!-- Custom JS -->
@@ -49,14 +47,16 @@
 
       gtag('config', 'G-J76WFEWYQ2');
     </script>
+      <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/brand.css" />
   </head>
 
-  <body>
+  <body class="brand-page">
     <!-- Navbar -->
     <nav class="bg-orange-400">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-          <div id="logo" class="flex-shrink-0"><a href="index.html"><img src="assets/kcdigital-logo-dark-1200x260.png" alt="KC Digital" class="h-10 w-auto" /></a></div>
+          <div id="logo" class="flex-shrink-0"><a href="index.html"><img src="assets/kc-digital-monogram.svg" alt="" class="brand-monogram" /><span>KC DIGITAL</span></a></div>
           <div class="sm:hidden flex items-center">
             <button id="menu-toggle" class="text-white focus:outline-none p-1 -mr-1" aria-label="Toggle menu" aria-expanded="false">
               <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

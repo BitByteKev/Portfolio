@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.innerWidth < 768;
 
   initI18n();
-  initDarkMode();
+  if (!document.body.classList.contains("brand-page")) initDarkMode();
   initMobileMenu();
-  initHeroBackground();
+  if (!document.body.classList.contains("brand-page")) initHeroBackground();
   initTypewriter();
   initSkillBars();
-  initWhatsAppFab();
+  if (!document.getElementById("contact-name")) initWhatsAppFab();
 
-  if (!prefersReduced) {
+  if (!prefersReduced && !document.body.classList.contains("brand-page")) {
     initScrollAnimations();
     if (!isMobile) initCardTilt();
     initFloatingNav();
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (!isMobile) initHoverZoom();
+  if (!isMobile && !document.body.classList.contains("brand-page")) initHoverZoom();
 });
 
 // ============================================

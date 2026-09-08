@@ -1,0 +1,23 @@
+.contact-page{min-height:100svh;display:flex;flex-direction:column}
+.contact-page .contact-main{width:100%;max-width:1400px;margin:0 auto;padding:160px clamp(20px,4vw,56px) 80px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);flex:1}
+.contact-intro h1{font-family:var(--display);font-size:clamp(56px,6.2vw,96px);line-height:1.04;font-weight:400;text-transform:uppercase;margin:24px 0}
+.contact-intro h1 span{color:var(--emerald)}
+.contact-lead{color:var(--cream-60);font-size:20px;max-width:28em;margin-bottom:32px}
+.contact-email{display:block;font-size:clamp(18px,2vw,26px);text-decoration:underline;text-underline-offset:6px;overflow-wrap:anywhere}
+.contact-phone{display:block;color:var(--cream-60);margin:14px 0 28px}
+.enquiry{border-top:1px solid var(--line);padding-top:24px}
+.enquiry-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}
+.enquiry-heading h2{font-family:var(--display);font-size:32px;font-weight:400}
+.lang-switcher{display:flex;gap:4px}
+.lang-btn{font-family:var(--mono);color:var(--cream-60);background:transparent;border:1px solid var(--line);padding:9px 12px;cursor:pointer}
+.lang-btn[aria-pressed="true"]{color:var(--ink);background:var(--emerald);border-color:var(--emerald)}
+.enquiry form{display:grid;gap:20px}
+.enquiry label{display:block;color:var(--cream-60);font-size:14px;margin-bottom:8px}
+.enquiry input,.enquiry select,.enquiry textarea{display:block;width:100%;padding:13px 15px;border:1px solid #53665a;border-radius:0;color:var(--cream);background:var(--panel);font:inherit;font-size:16px;color-scheme:dark}
+.enquiry input::placeholder,.enquiry textarea::placeholder{color:#a5aea7}
+.enquiry textarea{resize:vertical;min-height:130px}
+.enquiry button[type="submit"]{background:var(--emerald);color:var(--ink);font-family:var(--mono);font-size:13px;letter-spacing:.08em;padding:17px 24px;border:1px solid var(--emerald);cursor:pointer}
+.enquiry button[type="submit"]:hover{background:var(--cream);border-color:var(--cream)}
+.contact-page>.site-foot{max-width:none;margin:0;padding:32px clamp(20px,4vw,56px);border-top:1px solid var(--line)}
+@media(max-width:760px){.contact-page .contact-main{grid-template-columns:1fr;padding-top:116px;gap:48px}.contact-intro h1{font-size:clamp(52px,11vw,76px)}.contact-lead{font-size:18px}.enquiry-heading h2{font-size:28px}}
+.brand-page.contact-page:has(.unified-header){padding-top:0}

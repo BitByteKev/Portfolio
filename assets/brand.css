@@ -1,0 +1,58 @@
+/* Shared visual language for the portfolio's supporting pages. */
+:root{--brand-ink:#050807;--brand-panel:#0e1512;--brand-cream:#f2eddf;--brand-muted:#c6c9c1;--brand-green:#12e087}
+html{background:var(--brand-ink);scroll-behavior:auto;scroll-padding-top:90px}
+body.brand-page{background:var(--brand-ink);color:var(--brand-cream);font-family:Archivo,Arial,sans-serif;cursor:auto}
+.brand-page p,.brand-page a,.brand-page button,.brand-page input,.brand-page textarea,.brand-page select,.brand-page label,.brand-page li,.brand-page cite{font-family:Archivo,Arial,sans-serif}
+.brand-page h1,.brand-page h2,.brand-page h3{font-family:Anton,'Arial Narrow',sans-serif;font-weight:400;letter-spacing:.01em;text-shadow:none}
+.brand-page h1,.brand-page main>section>div>div>h2{line-height:1.1}
+.brand-page nav,.brand-page nav.nav-scrolled,.brand-page footer{background:var(--brand-ink)!important;color:var(--brand-cream);box-shadow:none;border-bottom:1px solid #26352b}
+.brand-page #logo img{width:180px;height:auto;max-width:100%}
+.brand-page [class*="bg-white"],.brand-page [class*="bg-gray-"],.brand-page .portfolio-card-body,.brand-page .project-card,.brand-page .cert-card{background:var(--brand-panel)!important}
+.brand-page [class*="text-gray-"],.brand-page .portfolio-outcome,.brand-page .testimonial,.brand-page .testimonial cite{color:var(--brand-muted)!important}
+.brand-page [class*="text-orange-"],.brand-page .portfolio-overlay h3,.brand-page .portfolio-outcome{color:var(--brand-green)!important}
+.brand-page [class*="border-orange-"],.brand-page [class*="border-gray-"]{border-color:#304c3b!important}
+.brand-page [class*="bg-orange-"]:not(nav):not(footer){background:var(--brand-green)!important;color:var(--brand-ink)!important}
+.brand-page nav a:hover,.brand-page .nav-active{background:#183626!important;color:var(--brand-cream)!important}
+.brand-page .glow-text{text-shadow:none}
+.brand-page .portfolio-card,.brand-page .project-card,.brand-page .cert-card{border:1px solid #304335;border-radius:4px;box-shadow:none;transform:none!important}
+.brand-page .portfolio-media{overflow:visible;height:auto}
+.brand-page .portfolio-media img{opacity:1;filter:none;transform:none!important}
+.brand-page .portfolio-overlay{position:relative;inset:auto;background:var(--brand-panel);opacity:1;transform:none;padding:24px;color:var(--brand-cream)}
+.brand-page .portfolio-overlay p{opacity:1;transform:none;color:var(--brand-muted)}
+.brand-page .visit-btn{opacity:1;transform:none;color:var(--brand-green);background:transparent;border:1px solid #304c3b}
+.brand-page .testimonial{border-color:var(--brand-green);background:transparent}
+.brand-page .anim-fade-up,.brand-page .anim-scale-in,.brand-page .anim-stagger>*{opacity:1!important;transform:none!important}
+.brand-page input,.brand-page textarea,.brand-page select{display:block;width:100%;background:#050807!important;color:var(--brand-cream)!important;border:1px solid #718479!important;border-radius:4px;padding:12px 14px;font-size:16px}
+.brand-page label{display:block;color:var(--brand-muted);font-weight:500;margin-bottom:8px}
+.brand-page input::placeholder,.brand-page textarea::placeholder{color:#a5aea7}
+.brand-page :focus-visible{outline:2px solid var(--brand-green)!important;outline-offset:4px}
+.brand-page .lang-btn{color:var(--brand-cream);border-color:#718479}
+.brand-page .lang-active{background:#183626;color:var(--brand-green)}
+.brand-page footer{border-top:1px solid #26352b}
+.brand-page .tilt-card:hover,.brand-page button:hover{transform:none}
+.brand-page .shadow-lg,.brand-page .shadow-md,.brand-page .shadow-sm{box-shadow:none!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.brand-page #contact,.brand-page #portfolio,.brand-page #about,.brand-page #languages{font-family:Anton,'Arial Narrow',sans-serif}
+.brand-page #logo a{display:inline-flex;gap:10px;align-items:center;color:var(--brand-cream);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em}
+.brand-page #logo .brand-monogram{width:24px;height:24px}
+::-webkit-scrollbar-track{background:#050807}
+::-webkit-scrollbar-thumb{background:#3c7154}
+::-webkit-scrollbar-thumb:hover{background:#12e087}
+.brand-page #whatsapp-fab::after{animation:none}
+.brand-page nav [class*="bg-orange-"]{background:transparent!important;color:var(--brand-cream)!important;border-radius:0;font-size:13px}
+.brand-page nav .nav-active{border-bottom:2px solid var(--brand-green)}
+.brand-page nav a:hover{color:var(--brand-green)!important}
+.brand-page .portfolio-media img{width:100%;height:auto!important;aspect-ratio:16/9;object-fit:cover}
+.brand-page .testimonial p{color:var(--brand-muted)!important}
+.brand-page .portfolio-card-body{border-color:#304335}
+.brand-page .portfolio-overlay{align-items:flex-start;text-align:left}
+.brand-page .portfolio-overlay h3{font-size:28px;margin-bottom:12px}
+.brand-page .portfolio-overlay p{font-size:16px;line-height:1.6}
+.brand-page nav #menu a,.brand-page nav #mobile-menu a{background:transparent!important;color:var(--brand-cream)!important}
+.brand-page nav #menu a:hover,.brand-page nav #mobile-menu a:hover{color:var(--brand-green)!important}
+.brand-page .portfolio-card{background:var(--brand-panel)!important}
+.brand-page .tech-tag{background:#183626;color:var(--brand-cream);border:1px solid #304c3b;font-family:Archivo,Arial,sans-serif}
+.brand-page .project-card-body{background:var(--brand-panel);border-color:#304c3b}
+.brand-page .portfolio-overlay h3{transform:none}
+.brand-page .visit-btn{font-family:'IBM Plex Mono',monospace}
+.brand-page nav[aria-label="Breadcrumb"]{position:static;background:transparent!important;border:0}
