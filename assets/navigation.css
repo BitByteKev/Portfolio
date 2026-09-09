@@ -16,3 +16,20 @@
  .unified-nav a:nth-child(2),.unified-nav a:nth-child(3){display:none}
  .brand-page:has(.unified-header){padding-top:68px}
 }
+
+/* Shared footer, including pages that use the legacy content stylesheet. */
+.site-foot{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:clamp(18px,3vw,44px);font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;letter-spacing:.08em;color:#a5aea7}
+.site-foot a{font-family:inherit;color:#c6c9c1;text-decoration:none;transition:color .2s}
+.site-foot a:hover{color:#12e087}
+.site-foot a:focus-visible{outline:2px solid #12e087;outline-offset:4px}
+.brand-page>.site-foot{width:100%;max-width:none;margin:0;padding:36px clamp(20px,4vw,56px);background:#050807;border-top:1px solid #26352b}
+.brand-page .unified-header .unified-nav a:hover{background:transparent!important}
+.brand-page .page-language{display:flex;width:max-content;margin:24px clamp(20px,4vw,56px) 0 auto;background:transparent;border:1px solid #304c3b;border-radius:4px}
+.brand-page .page-language .lang-btn{padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px}
+@media(max-width:600px){
+ .unified-header{flex-wrap:wrap;justify-content:center;gap:2px 16px}
+ .unified-header .unified-nav{justify-content:center;gap:24px}
+ .unified-header .unified-nav a:nth-child(n){display:inline-block}
+ .brand-page:has(.unified-header){padding-top:100px}
+ .brand-page>.site-foot{gap:18px 24px}
+}
