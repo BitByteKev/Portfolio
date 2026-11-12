@@ -121,6 +121,9 @@ window.I18N = {
     "portfolio.rv.outcome": "Serves as the digital hub for 40+ local businesses in the Rolando Village neighborhood.",
     "portfolio.rv.testimonial": "\"Kevin understood our community-first mission and delivered a site our merchants are proud to be listed on.\"",
     "portfolio.rv.cite": "— Bob, Rolando Village BID",
+    "portfolio.kinmberly.title": "Kinmberly Cuevas",
+    "portfolio.kinmberly.body": "A welcoming Spanish-language website for a clinical psychology practice in Tijuana.",
+    "portfolio.kinmberly.outcome": "Presents her approach, in-person and online consultations, and clear calls to book an appointment.",
     "portfolio.toolsLabel": "Tools & Technologies Used",
 
     // Projects page
@@ -349,6 +352,9 @@ window.I18N = {
     "portfolio.rv.outcome": "Sirve como el centro digital para más de 40 negocios locales en el barrio de Rolando Village.",
     "portfolio.rv.testimonial": "\"Kevin entendió nuestra misión centrada en la comunidad y entregó un sitio del que nuestros comerciantes están orgullosos de aparecer.\"",
     "portfolio.rv.cite": "— Bob, Rolando Village BID",
+    "portfolio.kinmberly.title": "Kinmberly Cuevas",
+    "portfolio.kinmberly.body": "Un sitio web acogedor en español para un consultorio de psicología clínica en Tijuana.",
+    "portfolio.kinmberly.outcome": "Presenta su enfoque, las consultas presenciales y en línea, e invitaciones claras para agendar una cita.",
     "portfolio.toolsLabel": "Herramientas y Tecnologías Usadas",
 
     // Projects page
