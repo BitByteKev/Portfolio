@@ -24,6 +24,32 @@ html{scroll-behavior:auto;scroll-padding-top:100px}
 .proof-context{font-size:14px;margin-top:24px}
 .text-link,.project-links a{display:inline-block;color:var(--emerald);text-decoration:underline;text-underline-offset:5px;padding:12px 0}
 .text-link{margin-top:16px}
+.meet-kevin {
+  display: grid;
+  grid-template-columns: minmax(0, 22rem) minmax(0, 36rem);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(32px, 6vw, 88px);
+}
+.meet-kevin-portrait {
+  width: 100%;
+  height: auto;
+}
+.meet-kevin h2 {
+  font: 400 clamp(40px, 5vw, 76px)/1.05 var(--display);
+}
+.meet-kevin p {
+  margin-top: 1em;
+  font-size: clamp(17px, 1.4vw, 20px);
+  color: var(--cream-60);
+}
+@media (max-width: 700px) {
+  .meet-kevin { grid-template-columns: minmax(0, 36rem); }
+  .meet-kevin-portrait { max-width: 22rem; }
+}
+@media (max-width: 380px) {
+  body:has(.meet-kevin) .unified-header .unified-nav { gap: 14px; }
+}
 .project-links{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-size:14px}
 .pcard{cursor:default}
 .pcard:hover{transform:none}
